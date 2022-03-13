@@ -48,13 +48,13 @@ vec3 Spherical( in vec3 pos)
 
 // signed distance function for the mandelbulb
 // basic Coding Train algorithm, incorporating some code from Inigo Quilez, 
+
 float mandelbulbSDF( in vec3 pos, out vec4 col) 
 {
   vec3 zeta = pos;
   
   // from Inigo Quelez
   float m = dot(pos,pos);
-  vec4 edge = vec4(abs(zeta), m);
   float dz = 1.0;
   
   float n = 8.0;
@@ -76,16 +76,13 @@ float mandelbulbSDF( in vec3 pos, out vec4 col)
      zeta.y = newy + pos.y;
      zeta.z = newz + pos.z;
      
-     //  from Inigo Quilez
-     edge = min( edge, vec4(abs(zeta), m) );
      m = dot (zeta, zeta);
-     if ( m > 256.0)
+     if ( m > 2.0)
          break;
    }
      
    // distance estimation through the Hubbard-Douady potential from Inigo Quilez
-   return 0.25*log(m) * sqrt(m) / dz;
-   
+   return 0.25*log(m) * sqrt(m) / dz;  
 }
 
 // Remainder of code adapted from Jamie Wong Ray Marching Part 2 in shadertoy
