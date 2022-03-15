@@ -9,10 +9,8 @@
 
 
 ## 2.  Inigo Quilez  has done pioneering work on shaders and is the co-creator of shadertoy.  
-### He has copywrited his mandelbulb code, and I provide the link to his shadertoy code for education purposes. 
-### I have used some of his techniques in writing the mandelbulbSDF; I have tried to properly attribute those parts to him.
+### I have used some of his techniques in .frag file; I have tried to properly attribute those parts to him.
 - [Inigo Quilez website] https://iquilezles.org
-- [Link to mandelbulb code developed by Inigo Quilez] https://www.shadertoy.com/view/ltfSWn
 
 ## 3.  The lighting and ray marching code comes from Jamie Wong.
 - [Ray Marching and Signed Distance Functions] http://jamie-wong.com/2016/07/15/ray-marching-signed-distance-functions/
@@ -25,4 +23,5 @@
 ## 5.   Future Improvements 
 
 - Try to incorporate different colors/textures
-- Try to add rotation; currently, the rendered image deforms when when rotation is added.
+- The moveable crystal mandelbulb looks a little pixelated and needs improvement.
+- The lighting could be improved with the regular version.
