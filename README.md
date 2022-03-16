@@ -8,7 +8,7 @@
 - [Exploration of how to port to P5.js from Shadertoy] https://www.youtube.com/watch?v=7ZIfXu_iPv4
 
 ## 2.  Inigo Quilez  has done pioneering work on shaders and is the co-creator of shadertoy.  
-### I have used some of his techniques in .frag file; 
+### I have used some of his techniques in the .frag file; 
 - [Inigo Quilez website] https://iquilezles.org
 - [Happy Jumping Livestream] https://youtu.be/Cfe5UQ-1L9Q
 
