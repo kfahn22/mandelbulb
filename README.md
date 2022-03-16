@@ -23,6 +23,6 @@
 
 ## 5.   Future Improvements 
 
-- Try to do a better job incorporate different colors/textures
+- Try to do a better job incorporating different colors/textures
 - The moveable versions look pixelated and have some rendering issues when moved.
 - The lighting needs to be improved, especially with the regular version.
