@@ -1,6 +1,6 @@
 # Crystal Mandelbulb
 
-## This code uses a shader to render a static image of the mandelbulb in P5.js.  It is based on the Coding Train Mandelbulb challenge by Daniel Shiffman.  It also incorporates code written by Inigo Quilez and Jamie Wong.
+## This code uses a shader to render the mandelbulb in P5.js.  It is based on the Coding Train Mandelbulb challenge by Daniel Shiffman.  It also incorporates code written by Inigo Quilez and Jamie Wong.
 
 ## 1.  The Spherical function and mandelbulbSDF track as closely as possible to the code written by Daniel Shiffman. 
 
