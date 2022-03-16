@@ -2,7 +2,7 @@
 
 ## This code uses a shader to render a static image of the mandelbulb in P5.js.  It is based on the Coding Train Mandelbulb challenge by Daniel Shiffman.  It also incorporates code written by Inigo Quilez and Jamie Wong.
 
-## 1.  The Spherical function and mandelbulbSDF tracks as closely as possible to the code written by Daniel Shiffman. 
+## 1.  The Spherical function and mandelbulbSDF track as closely as possible to the code written by Daniel Shiffman. 
 
 - [Mandelbulb challenge from theCodingTrain]  https://www.youtube.com/watch?v=NJCiUVGiNyA
 - [Exploration of how to port to P5.js from Shadertoy] https://www.youtube.com/watch?v=7ZIfXu_iPv4
