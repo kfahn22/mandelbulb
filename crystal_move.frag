@@ -42,7 +42,7 @@ vec3 Spherical( in vec3 pos)
 
 // Signed distance function for the mandelbulb
 // Based on processing sketch from Coding Train mandelbulb challenge, incorporating shader code from Inigo Quilez, 
-float mandelbulbSDF( in vec3 pos, out vec4 col) 
+float mandelbulbSDF( in vec3 pos) 
 {
   vec3 zeta = pos;
   
@@ -78,22 +78,16 @@ float mandelbulbSDF( in vec3 pos, out vec4 col)
    return 0.25*log(m) * sqrt(m) / dz; 
 }
 
-// Remainder of code adapted from Jamie Wong Ray Marching Part 2 in shadertoy
-float sceneSDF(vec3 position) {
-  vec4 edge;
-  return mandelbulbSDF( position, edge );
-}
-
 // Tetrahedron technique for calculating gradients from Inigo Quilez
 // https://iquilezles.org/www/articles/normalsSDF/normalsSDF.htm
 vec3 calcNormal ( vec3 pos )
 {
   const float h = 0.0001;
   const vec2 k = vec2(1,-1);
-  return normalize( k.xyy*sceneSDF( pos + k.xyy*h ) +
-                    k.yyx*sceneSDF( pos + k.yyx*h ) +
-                    k.yxy*sceneSDF( pos + k.yxy*h ) +
-                    k.xxx*sceneSDF( pos + k.xxx*h ) 
+  return normalize( k.xyy*mandelbulbSDF( pos + k.xyy*h ) +
+                    k.yyx*mandelbulbSDF( pos + k.yyx*h ) +
+                    k.yxy*mandelbulbSDF( pos + k.yxy*h ) +
+                    k.xxx*mandelbulbSDF( pos + k.xxx*h ) 
                   );
 }
 
@@ -101,7 +95,7 @@ vec3 calcNormal ( vec3 pos )
 float shortestDistanceToSurface(vec3 eye, vec3 marchingDirection, float start, float end) {
     float depth = start;
     for (int i = 0; i <  MAX_MARCHING_STEPS; i++) {
-        float dist = sceneSDF(eye + depth * marchingDirection);
+        float dist = mandelbulbSDF(eye + depth * marchingDirection);
         if (dist < epsilon) {
 			return depth;
         }
@@ -204,4 +198,6 @@ void main() {
     
   gl_FragColor = vec4(color,1.0); // R,G,B,A
 }
+
+
 
