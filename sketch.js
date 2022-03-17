@@ -10,7 +10,7 @@ let theShader;
 function preload(){
   // load the shader
   // this version uses phong illumination to add lighting
-   theShader = loadShader('basic.vert', 'crystal_static.frag');
+   theShader = loadShader('basic.vert', 'color_crystal.frag');
   // use this to render a movable version; it takes longer to render
   // theShader = loadShader('basic.vert', 'crystal_movable.frag');  
   // this version renders a movable version w/o phong illumination
