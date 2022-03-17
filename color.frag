@@ -69,21 +69,21 @@ float mandelbulbSDF( in vec3 pos)
    
    float dr = 1.;
    for ( int i = 0; i < maxiterations; i+=1) {
-	   dz = 8.0*pow(m, 3.5)*dz + 1.0;
-	   vec3 sphericalZ = Spherical( zeta ); 
-	   float newx = pow(sphericalZ.x, n) * sin(sphericalZ.y*n) * cos(sphericalZ.z*n);
-	   float newy = pow(sphericalZ.x, n) * sin(sphericalZ.y*n) * sin(sphericalZ.z*n);
-	   float newz = pow(sphericalZ.x, n) * cos(sphericalZ.y*n);
-	   zeta.x = newx + pos.x;
-	   zeta.y = newy + pos.y;
-	   zeta.z = newz + pos.z;
+     dz = n*pow(m, 3.5)*dz + 1.0;
+     vec3 sphericalZ = Spherical( zeta ); 
+     float newx = pow(sphericalZ.x, n) * sin(sphericalZ.y*n) * cos(sphericalZ.z*n);
+     float newy = pow(sphericalZ.x, n) * sin(sphericalZ.y*n) * sin(sphericalZ.z*n);
+     float newz = pow(sphericalZ.x, n) * cos(sphericalZ.y*n);
+     zeta.x = newx + pos.x;
+     zeta.y = newy + pos.y;
+     zeta.z = newz + pos.z;
 
-	   m = dot (zeta, zeta);
-	     if ( m > 2.0)
-	       break;
+      m = dot (zeta, zeta);
+      if ( m > 2.0)
+         break;
    }
-     
-  // distance estimation through the Hubbard-Douady potential , ditto
+ 
+  // distance estimation through the Hubbard-Douady potential from IQ
    return 0.25*log(m) * sqrt(m) / dz;
    
 }
@@ -195,16 +195,14 @@ void main() {
       
  //  add a target for the camera
   vec3 ta = vec3(0.0,0.1,0.0);
-    
-  //float an = 10.0*iMouse.x/iResolution.x; //iTime;
   
   //ro is ray origin
   //origin of camera (ta moves camera up)
-  vec3 ro = ta ;//+ vec3(1.5*sin(an),0.0,1.5*cos(an));  
+  vec3 ro = ta;
   // The closest point on the surface to the eyepoint along the view ray
     vec3 p = eye + dist * dir;
     
-    vec3 K_a = vec3(0.2, 1.0, .4); //adjust color here 
+    vec3 K_a = vec3(0.1, 1., .5); //adjust color here 
     //vec3 K_a = vec3(0.1, 0.7, 0.8);
     vec3 K_d = vec3(0.4, 0.4, 0.4);
     vec3 K_s = vec3(0.9, 0.9, 0.9);
