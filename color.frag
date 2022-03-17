@@ -72,24 +72,18 @@ float mandelbulbSDF( in vec3 pos)
    
    float dr = 1.;
    for ( int i = 0; i < maxiterations; i+=1) {
-    dz = 8.0*pow(m, 3.5)*dz + 1.0;
-   // float r = sqrt(zeta.x*zeta.x + zeta.y*zeta.y + zeta.z*zeta.z);
-   // float theta = atan( sqrt(zeta.x*zeta.x + zeta.y*zeta.y ), zeta.z) ;
-   // float phi = atan(zeta.y, zeta.x);
-   vec3 sphericalZ = Spherical( zeta ); 
-  // vec3 sphericalZ = vec3(r, theta, phi);
-   float newx = pow(sphericalZ.x, n) * sin(sphericalZ.y*n) * cos(sphericalZ.z*n);
-   float newy = pow(sphericalZ.x, n) * sin(sphericalZ.y*n) * sin(sphericalZ.z*n);
-   float newz = pow(sphericalZ.x, n) * cos(sphericalZ.y*n);
-   zeta.x = newx + pos.x;
-   zeta.y = newy + pos.y;
-   zeta.z = newz + pos.z;
-     
-   edge = min( edge, vec4(abs(zeta), m) );
-     
-     m = dot (zeta, zeta);
-     if ( m > 2.0)
-       break;
+	   dz = 8.0*pow(m, 3.5)*dz + 1.0;
+	   vec3 sphericalZ = Spherical( zeta ); 
+	   float newx = pow(sphericalZ.x, n) * sin(sphericalZ.y*n) * cos(sphericalZ.z*n);
+	   float newy = pow(sphericalZ.x, n) * sin(sphericalZ.y*n) * sin(sphericalZ.z*n);
+	   float newz = pow(sphericalZ.x, n) * cos(sphericalZ.y*n);
+	   zeta.x = newx + pos.x;
+	   zeta.y = newy + pos.y;
+	   zeta.z = newz + pos.z;
+
+	   m = dot (zeta, zeta);
+	     if ( m > 2.0)
+	       break;
    }
      
   // distance estimation through the Hubbard-Douady potential , ditto
