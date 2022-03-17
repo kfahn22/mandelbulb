@@ -61,9 +61,6 @@ float mandelbulbSDF( in vec3 pos)
 {
   vec3 zeta = pos;
   float m = dot(pos,pos);
-  
-  vec4 edge = vec4(abs(zeta), m);
-  
   float dz = 1.0;
   float n = 8.0;
   const int maxiterations = 20;
