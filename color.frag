@@ -91,8 +91,6 @@ float mandelbulbSDF( in vec3 pos)
      if ( m > 2.0)
        break;
    }
-  // I don't understand this line of code; borrowed it from IQ
-  // col = vec4(m,edge.yzw);
      
   // distance estimation through the Hubbard-Douady potential , ditto
    return 0.25*log(m) * sqrt(m) / dz;
