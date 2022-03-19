@@ -92,26 +92,32 @@ vec3 calcNormal ( vec3 pos )
                   );
 }
 
-// Ray marching 
-float shortestDistanceToSurface(vec3 eye, vec3 marchingDirection, float start, float end) {
-    float depth = start;
-    for (int i = 0; i <  MAX_MARCHING_STEPS; i++) {
-        float dist = mandelbulbSDF(eye + depth * marchingDirection);
-        if (dist < epsilon) {
-			return depth;
-        }
-        depth += dist;
-        if (depth >= end) {
-            return end;
-        }
-    }
-    return end;
+
+// Ray marching algorithm  adjsuted from Inigo Quilez
+float castRay( in vec3 ro, vec3 rd, float start, float end) 
+{
+ float t = start;
+  
+ for ( int i = 0; i < 255; i ++ )
+ {
+   vec3 pos = ro + t*rd;
+   
+   float h = mandelbulbSDF( pos );
+  
+   if ( h<0.001 ) 
+      return t;
+   t += h;
+   if ( t > end ) break;
+ }
+  return end;
 }
 
 // Lighting function from Jamie Wong
 vec3 phongContribForLight(vec3 k_d, vec3 k_s, float alpha, vec3 p, vec3 eye,
                           vec3 lightPos, vec3 lightIntensity) {
-    vec3 N = calcNormal(p);
+    
+   // Create basis vectors
+   vec3 N = calcNormal(p);
     vec3 L = normalize(lightPos - p);
     vec3 V = normalize(eye - p);
     vec3 R = normalize(reflect(-L, N));
@@ -134,7 +140,7 @@ vec3 phongContribForLight(vec3 k_d, vec3 k_s, float alpha, vec3 p, vec3 eye,
 
 // Lighting function from Jamie Wong
 vec3 phongIllumination(vec3 k_a, vec3 k_d, vec3 k_s, float alpha, vec3 p, vec3 eye) {
-    const vec3 ambientLight = 0.5 * vec3(1.0, 1.0, 1.0);
+    const vec3 ambientLight = 0.65 * vec3(1.0, 1.0, 1.0);
     vec3 color = ambientLight * k_a;
     
     vec3 light1Pos = vec3(4.0, 2.0, 4.0);
@@ -164,22 +170,29 @@ void main() {
     vec2 p =  (2.0*gl_FragCoord.xy-u_resolution.xy)/u_resolution.y;
     // Time varying pixel color
    
-    // Add a target for the camera
-    vec3 ta = vec3(0.0,0.,0.0);
     
+    // Add a target for the camera
+    vec3 ta = vec3(0.0,0.0,0.0);
+    
+
     float an = 0.005 * iFrame;
-    //float an = 10.0*iMouse.x/u_resolution.x;
+    
+    // float an = 10.0*iMouse.x/u_resolution.x;  // uncomment to get a style image
     vec3 ro = ta +  vec3(1.45*sin(an),0.0,1.45*cos(an));  // origin of camera (ta moves camera up)
     
-   // Lighting comes from Inigo Quilez Happy Jumping livestream
+   float zoom = 0.75;  // zoom level for camera
+  
+   // Create basis vectors 
+   // ww is the forward vector
+   // vv is the up vector
+   // normalize so that vectors are have unit length
     vec3 ww = normalize( ta - ro); // target minus ray origin
-    vec3 uu = normalize( cross(ww,vec3(0.,1.,0.)) );
+    vec3 uu = normalize( cross(ww,vec3(0.,1.,0.)) ); //(0,1,0) is the world up vector
     vec3 vv = normalize( cross(uu,ww) );
     
-  // Get the ray direction
-    vec3 rd = normalize( p.x*uu +p.y*vv + .8*ww );  // lens of camera
+    vec3 rd = normalize( p.x*uu +p.y*vv + zoom * ww );  // lens of camera
   
-  float dist = shortestDistanceToSurface(ro, rd, MIN_DIST, MAX_DIST);
+   float dist = castRay(ro, rd, MIN_DIST, MAX_DIST);
     
     if (dist > MAX_DIST - epsilon) {
         // Didn't hit anything
@@ -191,7 +204,7 @@ void main() {
   // The closest point on the surface to the eyepoint along the view ray
     vec3 eye = ro + dist * rd;
     
-    vec3 K_a = vec3(0.7, 0.1, 0.7);
+    vec3 K_a = vec3(0.5, 0.7, 1.0);  // change RGB values here
     vec3 K_d = vec3(0.4, 0.4, 0.4);
     vec3 K_s = vec3(0.9, 0.9, 0.9);
     float shininess = 5.0;
@@ -200,6 +213,4 @@ void main() {
     
   gl_FragColor = vec4(color,1.0); // R,G,B,A
 }
-
-
 
