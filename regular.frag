@@ -22,7 +22,7 @@ precision mediump float;
 // Passed in as a uniform from the sketch.js file
 uniform vec2 u_resolution; 
 uniform vec2 iMouse;
-uniform float iTime;
+uniform float iFrame;
 
 // const int MAX_MARCHING_STEPS = 255;
 const float MIN_DIST = 0.0;
@@ -137,7 +137,8 @@ void main() {
     // add a target for the camera
     vec3 ta = vec3(0.0,0.0,0.0);
     
-    float an = 10.0*iMouse.x/u_resolution.x;
+    float an = 0.005 * iFrame;
+    //float an = 10.0*iMouse.x/u_resolution.x;
     vec3 ro = ta + vec3(1.5*sin(an),0.0,1.5*cos(an));  // origin of camera (ta moves camera up)
     
    // lighting comes from Inigo Quilez Happy Jumping livestream
