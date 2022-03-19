@@ -93,7 +93,7 @@ vec3 calcNormal ( vec3 pos )
 }
 
 
-// Ray marching algorithm  adjsuted from Inigo Quilez
+// Ray marching algorithm adjusted from Inigo Quilez
 float castRay( in vec3 ro, vec3 rd, float start, float end) 
 {
  float t = start;
