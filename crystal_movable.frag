@@ -52,7 +52,7 @@ float mandelbulbSDF( in vec3 pos)
   float dz = 1.0;
   
   // From Coding Train challenge
-  float n = 8.0;
+  float n = 8.0; // code only works for n = 8.0 
   const int maxiterations = 20;
   
   for ( int i = 0; i < maxiterations; i+=1) {
@@ -116,11 +116,10 @@ float castRay( in vec3 ro, vec3 rd, float start, float end)
 vec3 phongContribForLight(vec3 k_d, vec3 k_s, float alpha, vec3 p, vec3 eye,
                           vec3 lightPos, vec3 lightIntensity) {
     
-   // Create basis vectors
-   vec3 N = calcNormal(p);
-    vec3 L = normalize(lightPos - p);
-    vec3 V = normalize(eye - p);
-    vec3 R = normalize(reflect(-L, N));
+    vec3 N = calcNormal(p); //Normal
+    vec3 L = normalize(lightPos - p);  // Light direction
+    vec3 V = normalize(eye - p);  // View direction
+    vec3 R = normalize(reflect(-L, N));  // Reflect direction
     
     float dotLN = dot(L, N);
     float dotRV = dot(R, V);
@@ -142,8 +141,10 @@ vec3 phongContribForLight(vec3 k_d, vec3 k_s, float alpha, vec3 p, vec3 eye,
 vec3 phongIllumination(vec3 k_a, vec3 k_d, vec3 k_s, float alpha, vec3 p, vec3 eye) {
     const vec3 ambientLight = 0.65 * vec3(1.0, 1.0, 1.0);
     vec3 color = ambientLight * k_a;
-    
-    vec3 light1Pos = vec3(4.0, 2.0, 4.0);
+    float an = 0.005 * iFrame;
+    vec3 light1Pos = vec3(4.0 * sin(an),
+                          2.0,
+                          4.0 * cos(an) );
 
     vec3 light1Intensity = vec3(0.4, 0.4, 0.4);
     
@@ -151,11 +152,11 @@ vec3 phongIllumination(vec3 k_a, vec3 k_d, vec3 k_s, float alpha, vec3 p, vec3 e
                                   light1Pos,
                                   light1Intensity);
     
-    vec3 light2Pos = vec3(2.0 * sin(0.37),
+     vec3 light2Pos = vec3(2.0 * sin(0.37),
                           2.0 * cos(0.37),
                           2.0);
   
-    vec3 light2Intensity = vec3(0.4, 0.4, 0.4);
+    vec3 light2Intensity = vec3(0.2, 0.2, 0.2);
     
     color += phongContribForLight(k_d, k_s, alpha, p, eye,
                                   light2Pos,
@@ -168,17 +169,16 @@ void main() {
   
   // Normalized pixel coordinates (from 0 to 1)
     vec2 p =  (2.0*gl_FragCoord.xy-u_resolution.xy)/u_resolution.y;
-    // Time varying pixel color
-   
     
     // Add a target for the camera
     vec3 ta = vec3(0.0,0.0,0.0);
     
-
     float an = 0.005 * iFrame;
     
-    // float an = 10.0*iMouse.x/u_resolution.x;  // uncomment to get a style image
-    vec3 ro = ta +  vec3(1.45*sin(an),0.0,1.45*cos(an));  // origin of camera (ta moves camera up)
+   // float an = 10.0*iMouse.x/u_resolution.x;  // uncomment to get a static image
+
+   // origin of camera (ta moves camera up)
+   vec3 ro = ta +  vec3(1.45*sin(an),0.0,1.45*cos(an));  
     
    float zoom = 0.75;  // zoom level for camera
   
@@ -200,13 +200,12 @@ void main() {
 		return;
     }
   
- 
   // The closest point on the surface to the eyepoint along the view ray
     vec3 eye = ro + dist * rd;
     
-    vec3 K_a = vec3(0.5, 0.7, 1.0);  // change RGB values here
-    vec3 K_d = vec3(0.4, 0.4, 0.4);
-    vec3 K_s = vec3(0.9, 0.9, 0.9);
+    vec3 K_a = vec3(0.5, 0.7, 1.0);  // Ambient color -- change RGB values here
+    vec3 K_d = vec3(0.4, 0.4, 0.4);  // Diffuse Color
+    vec3 K_s = vec3(0.3, 0.3, 0.3);  // Specular color
     float shininess = 5.0;
     
     vec3 color = phongIllumination(K_a, K_d, K_s, shininess, eye, ro);
