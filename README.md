@@ -30,7 +30,7 @@
 - https://editor.p5js.org/kfahn/full/o5sX5O0cF
 - https://editor.p5js.org/kfahn/sketches/o5sX5O0cF
 
-## 5.   Future Work
+## 6.   Future Work
 
 - Try to figure out why the mandelbulb render is so different from the "crystal" version when animation is added.
 - Continue to improve efficiency and lighting.
