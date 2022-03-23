@@ -184,12 +184,13 @@ void main() {
   
    // Create basis vectors 
    // ww is the forward vector
+   // uu is the right vector
    // vv is the up vector
-   // normalize so that vectors are have unit length
+   // Normalize so that vectors have unit length
     vec3 ww = normalize( ta - ro); // target minus ray origin
-    vec3 uu = normalize( cross(ww,vec3(0.,1.,0.)) ); //(0,1,0) is the world up vector
-    vec3 vv = normalize( cross(uu,ww) );
-    
+    vec3 uu = cross(ww,vec3(0.,1.,0.)); //(0,1,0) is the world up vector
+    vec3 vv = cross(uu,ww);
+  
     vec3 rd = normalize( p.x*uu +p.y*vv + zoom * ww );  // lens of camera
   
    float dist = castRay(ro, rd, MIN_DIST, MAX_DIST);
