@@ -1,4 +1,4 @@
-# Crystal Mandelbulb
+# Mandelbulb
 
 ## This code uses a shader to render the mandelbulb in P5.js.  It is based on the Coding Train Mandelbulb challenge by Daniel Shiffman.  It also incorporates code written by Inigo Quilez and Jamie Wong.
 
