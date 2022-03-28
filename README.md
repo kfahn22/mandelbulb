@@ -20,17 +20,27 @@
 - YouTube: youtube.com/TheArtOfCodeIsCool
 - [Ray marching starting point] https://www.shadertoy.com/view/WtGXDD
 
-## 4.  Link to the movable version of P5.js sketch
+## 4.  Link to the Multiple Color Verson of P5.sj sketch
+
+- https://editor.p5js.org/kfahn/full/XF8pZKeRC
+- https://editor.p5js.org/kfahn/sketches/XF8pZKeRC
+
+## 5.  Link to the Blue version of P5.js sketch
 
 - https://editor.p5js.org/kfahn/full/vt00q_BhB
 - https://editor.p5js.org/kfahn/sketches/vt00q_BhB
 
-## 5.  Link to a crystal version of the P5.js sketch
+## 6.  Link to the Regular version of the p5.js sketch
+
+- https://editor.p5js.org/kfahn/full/3Yp7ZBCMw
+- https://editor.p5js.org/kfahn/sketches/3Yp7ZBCMw
+
+## 7.  Link to a Crystal version of the P5.js sketch
 
 - https://editor.p5js.org/kfahn/full/o5sX5O0cF
 - https://editor.p5js.org/kfahn/sketches/o5sX5O0cF
 
-## 6.   Future Work
+## 8.   Future Work
 
 - Try to figure out why the mandelbulb render is so different from the "crystal" version when animation is added.
 - Continue to improve efficiency and lighting.
