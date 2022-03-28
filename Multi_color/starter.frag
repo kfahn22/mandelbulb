@@ -1,3 +1,20 @@
+// frag shader code is based on code from Daniel Shiffman, Inigo Quilez, Jamie Wong, Martijn Steinrucken (aka the Art of Coding)
+
+// Mandelbulb challenge from theCodingTrain
+// https://www.youtube.com/watch?v=NJCiUVGiNyA
+// Exploration of how to port from Shadertoy
+// https://www.youtube.com/watch?v=7ZIfXu_iPv4
+
+// https://iquilezles.org/www/articles/mandelbulb/mandelbulb.htm
+
+// http://jamie-wong.com/2016/07/15/ray-marching-signed-distance-functions/
+// https://www.shadertoy.com/view/lt33z7
+
+// I recommend these wonderful tutorials
+// YouTube: youtube.com/TheArtOfCodeIsCool
+// Ray marching starting point
+// https://www.shadertoy.com/view/WtGXDD
+
 // "RayMarching starting point" 
 // by Martijn Steinrucken aka The Art of Code/BigWings - 2020
 // The MIT License
@@ -12,31 +29,26 @@ precision mediump float;
 #define T iFrame
 
 uniform vec2 u_resolution; // This is passed in as a uniform from the sketch.js file
-uniform float iTime;
 uniform vec2 iMouse;
 uniform float iFrame;
+uniform float iTime;
 uniform sampler2D tex0;
-uniform sampler2D tex1;
 
 #define MAX_STEPS 100
 #define MAX_DIST 100.
 #define SURF_DIST .001
-
-#define S smoothstep
-#define T iFrame
 
 mat2 Rot(float a) {
     float s=sin(a), c=cos(a);
     return mat2(c, -s, s, c);
 }
 
-float sdBox(vec3 p, vec3 s) {
-    p = abs(p)-s;
-	return length(max(p, 0.))+min(max(p.x, max(p.y, p.z)), 0.);
+// Function to take r,g,b values to range 0,1 from Jamie Wong
+// Remember to input a float!
+vec3 rgb( float r, float g, float b) 
+{
+   return vec3(r/ 255.0, g / 255.0, b / 255.0);
 }
-
-
-
 
 // function to extract polar coordinates
 // from Daniel Shiffman
@@ -82,7 +94,6 @@ float mandelbulbSDF( in vec3 pos)
    
 }
 
-
 float GetDist(vec3 p) {
     //float d = sdBox(p, vec3(1));
     //float d = length(p)-1.5;
@@ -90,10 +101,11 @@ float GetDist(vec3 p) {
     return d;
 }
 
+// the render gets a little pixelated when animated
 vec3 Transform(vec3 p)
 {
-   //p.xy *= Rot(iFrame*.01);
-   //p.xz *= Rot(iFrame*.01);
+   // p.xy *= Rot(iFrame*.005);
+   // p.xz *= Rot(iFrame*.005);
   
   return p;
 }
@@ -108,7 +120,6 @@ float RayMarch(vec3 ro, vec3 rd) {
         dO += dS;
         if(dO>MAX_DIST || abs(dS)<SURF_DIST) break;
     }
-    
     return dO;
 }
 
@@ -136,14 +147,19 @@ vec3 GetRayDir(vec2 uv, vec3 p, vec3 l, float z) {
 
 void main()
 {
+    // Remap uvs to center of screen
     vec2 uv = (gl_FragCoord.xy -.5*u_resolution.xy)/u_resolution.y;
 	vec2 m = iMouse.xy/u_resolution.xy;
+   
+    // Add some color variation
+    vec3 col1 = rgb(55., 18., 60.);  //purple
+    vec3 col2 = rgb(184., 23. ,90.);  // red
    
     vec3 ro = vec3(0, 3, -3);
     ro.yz *= Rot(-m.y*3.14+1.);
     ro.xz *= Rot(-m.x*6.2831);
     
-    vec3 rd = GetRayDir(uv, ro, vec3(0,0.,0), 1.1);
+    vec3 rd = GetRayDir(uv, ro, vec3(0,0.,0), 1.3);
     vec3 col = vec3(0);
    
     float d = RayMarch(ro, rd);
@@ -156,15 +172,11 @@ void main()
         float dif = dot(n, normalize(vec3(1,2,3)))*.5+.5;
         col = vec3(dif);
         
-        //col += dif*dif;
-      
-        //uv = gl_FragCoord.xy/u_resolution.xy;
-
-       
-        vec3 colXY = texture2D(tex0, p.xy*.5+0.5).rgb;
-        vec3 colXZ = texture2D(tex0, p.xz*.5+0.5).rgb;
+        col += dif*dif;
+ 
+        vec3 colXY = col1;
+        vec3 colXZ = col2;
         vec3 colYZ = texture2D(tex0, p.yz*.5+0.5).rgb;
-      
       
        // Tri-planar mapping
         n = abs(n);  // take absolute value to get all faces of cube
@@ -174,16 +186,7 @@ void main()
        col = colXZ*n.y + colXY*n.z + colYZ*n.x ; 
       
        uv = vec2(atan(p.x, p.z)/ 6.2832 , p.y/3.) + .5;  // remap coordinates
-       //vec4 flowers = texture2D(tex1, uv);
-      
-       //flowers.a = smoothstep(.6, .5, abs(p.y));  // fade out at top and bottom
-       // col = mix(col, flowers.rgb, flowers.a);
-      
-       //col = n;  // To See how colors are blended together
     }
-  
-    
-  
   
     //col = pow(col, vec3(.4545));	// gamma correction
     

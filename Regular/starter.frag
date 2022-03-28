@@ -173,12 +173,12 @@ void main() {
      // add bounce lighting reflecting back; (-) points down
      float bou_dif = clamp( 0.5 + 0.5*dot(nor,vec3(0.0,-1.0,0.0)), 0.0, 1.0); 
       
-      float dif = 0.5 + clamp(0.5* dot(nor,sun_dir), 1.0, 1.0);
-      // add key lighting
+     float dif = 0.5 + clamp(0.5* dot(nor,sun_dir), 1.0, 1.0);
+     // add key lighting
       
-      col = mate*vec3(7.0,4.0,4.0)*sun_dif*sun_sha; 
-      col += mate*vec3(0.5,0.8,0.9)*sky_dif; // fill light has a value about 1
-      col += mate*vec3(0.7,0.5,0.3)*bou_dif; 
+     col = mate*vec3(7.0,4.0,4.0)*sun_dif*sun_sha; 
+     col += mate*vec3(0.5,0.8,0.9)*sky_dif; // fill light has a value about 1
+     col += mate*vec3(0.7,0.5,0.3)*bou_dif; 
    }
   
      // include gamma correction right from beginning 

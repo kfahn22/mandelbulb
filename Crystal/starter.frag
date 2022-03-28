@@ -22,27 +22,12 @@ precision mediump float;
 
 uniform vec2 u_resolution; // This is passed in as a uniform from the sketch.js file
 
-
 const int MAX_MARCHING_STEPS = 255;
 const float MIN_DIST = 0.0;
 const float MAX_DIST = 20.0;
 const float EPSILON = 0.0001;
 
 #define MAX_STEPS 128
-
-// Bounding sphere from Inigo Quilez
-// compute distance to this sphere first to minimize computations
-vec2 isphere( vec4 sph, vec3 ro, vec3 rd )
-{
-    vec3 oc = ro - sph.xyz;
-	float b = dot(oc,rd);
-	float c = dot(oc,oc) - sph.w*sph.w;
-    float h = b*b - c;
-    if( h<0.0 ) return vec2(-1.0);
-    h = sqrt( h );
-    return -b + vec2(-h,h);
-}
-
 
 // function to extract polar coordinates
 // from Daniel Shiffman
@@ -88,14 +73,12 @@ float mandelbulbSDF( in vec3 pos)
    
 }
 
-
 // from Jamie Wong
 vec3 rayDirection(float fieldOfView, vec2 size, vec2 fragCoord) {
     vec2 xy =(gl_FragCoord.xy - size) / 2.0;
     float z = size.y / tan(radians(fieldOfView) / 2.0);
     return normalize(vec3(xy, -z));
 }
-
 
 // Tetrahedron technique for calculating gradients from Inigo Quilez
 // https://iquilezles.org/www/articles/normalsSDF/normalsSDF.htm
@@ -176,13 +159,10 @@ vec3 phongIllumination(vec3 k_a, vec3 k_d, vec3 k_s, float alpha, vec3 p, vec3 e
     return color;
 }
 
-
-
-
 void main() {
- // position of the pixel divided by resolution, to get normalized positions on the canvas
-  //vec2 st = gl_FragCoord.xy/u_Resolution.xy; 
-   vec3 dir = rayDirection(90.0, u_resolution.xy, gl_FragCoord.xy);
+    // position of the pixel divided by resolution, to get normalized positions on the canvas
+    //vec2 st = gl_FragCoord.xy/u_Resolution.xy; 
+     vec3 dir = rayDirection(90.0, u_resolution.xy, gl_FragCoord.xy);
     vec3 eye = 1.075*vec3(1.0, 1.0, 4.95);
     float dist = shortestDistanceToSurface(eye, dir, MIN_DIST, MAX_DIST);
     
@@ -191,27 +171,22 @@ void main() {
         gl_FragColor = vec4(0.0, 0.0, 0.0, 0.0);
 		return;
     }
+    
+    //  add a target for the camera
+    vec3 ta = vec3(0.0,0.1,0.0);
   
-      
- //  add a target for the camera
-  vec3 ta = vec3(0.0,0.1,0.0);
-  
-  //ro is ray origin
-  //origin of camera (ta moves camera up)
-  vec3 ro = ta;
-  // The closest point on the surface to the eyepoint along the view ray
+    //ro is ray origin
+    //origin of camera (ta moves camera up)
+    vec3 ro = ta;
+    // The closest point on the surface to the eyepoint along the view ray
     vec3 p = eye + dist * dir;
     
     vec3 K_a = vec3(0.1, 1., .5); //adjust color here 
-    //vec3 K_a = vec3(0.1, 0.7, 0.8);
     vec3 K_d = vec3(0.4, 0.4, 0.4);
     vec3 K_s = vec3(0.9, 0.9, 0.9);
     float shininess = 5.0;
     
     vec3 color = phongIllumination(K_a, K_d, K_s, shininess, p, eye);
-   //  vec3 col = vec3(.6, .6,.6);
-   // vec3 newcolor = mix(color, col, 0.4);
 
   gl_FragColor = vec4(color,1.0); // R,G,B,A
 }
-
