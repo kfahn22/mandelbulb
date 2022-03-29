@@ -37,17 +37,12 @@ uniform sampler2D tex0;
 #define MAX_STEPS 100
 #define MAX_DIST 100.
 #define SURF_DIST .001
+#define PURPLE vec3(55, 18, 60) / 255.
+#define RED vec3(184, 23, 90) / 255.
 
 mat2 Rot(float a) {
     float s=sin(a), c=cos(a);
     return mat2(c, -s, s, c);
-}
-
-// Function to take r,g,b values to range 0,1 from Jamie Wong
-// Remember to input a float!
-vec3 rgb( float r, float g, float b) 
-{
-   return vec3(r/ 255.0, g / 255.0, b / 255.0);
 }
 
 // function to extract polar coordinates
@@ -151,10 +146,6 @@ void main()
     vec2 uv = (gl_FragCoord.xy -.5*u_resolution.xy)/u_resolution.y;
 	vec2 m = iMouse.xy/u_resolution.xy;
    
-    // Add some color variation
-    vec3 col1 = rgb(55., 18., 60.);  //purple
-    vec3 col2 = rgb(184., 23. ,90.);  // red
-   
     vec3 ro = vec3(0, 3, -3);
     ro.yz *= Rot(-m.y*3.14+1.);
     ro.xz *= Rot(-m.x*6.2831);
@@ -174,8 +165,8 @@ void main()
         
         col += dif*dif;
  
-        vec3 colXY = col1;
-        vec3 colXZ = col2;
+        vec3 colXY = PURPLE;
+        vec3 colXZ = RED;
         vec3 colYZ = texture2D(tex0, p.yz*.5+0.5).rgb;
       
        // Tri-planar mapping
@@ -187,8 +178,5 @@ void main()
       
        uv = vec2(atan(p.x, p.z)/ 6.2832 , p.y/3.) + .5;  // remap coordinates
     }
-  
-    //col = pow(col, vec3(.4545));	// gamma correction
-    
     gl_FragColor = vec4(col,1.0);
 }
