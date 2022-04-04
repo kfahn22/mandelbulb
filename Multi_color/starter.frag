@@ -1,4 +1,4 @@
-// frag shader code is based on code from Daniel Shiffman, Inigo Quilez, Jamie Wong, Martijn Steinrucken (aka the Art of Coding)
+// frag shader code is based on code from Daniel Shiffman, Inigo Quilez, and Martijn Steinrucken (aka the Art of Coding)
 
 // Mandelbulb challenge from theCodingTrain
 // https://www.youtube.com/watch?v=NJCiUVGiNyA
@@ -7,19 +7,9 @@
 
 // https://iquilezles.org/www/articles/mandelbulb/mandelbulb.htm
 
-// http://jamie-wong.com/2016/07/15/ray-marching-signed-distance-functions/
-// https://www.shadertoy.com/view/lt33z7
-
-// I recommend these wonderful tutorials
 // YouTube: youtube.com/TheArtOfCodeIsCool
 // Ray marching starting point
 // https://www.shadertoy.com/view/WtGXDD
-
-// "RayMarching starting point" 
-// by Martijn Steinrucken aka The Art of Code/BigWings - 2020
-// The MIT License
-// See Texturing SDFs by The Art of Code
-
 
 #ifdef GL_ES
 precision mediump float;
@@ -37,8 +27,10 @@ uniform sampler2D tex0;
 #define MAX_STEPS 100
 #define MAX_DIST 100.
 #define SURF_DIST .001
-#define PURPLE vec3(55, 18, 60) / 255.
-#define RED vec3(184, 23, 90) / 255.
+#define PURPLE vec3(83,29,109) / 255.
+#define RED vec3(191, 18, 97) / 255.
+#define ORANGE vec3(251,162,100) / 255.
+#define BLUE vec3(118, 212,229) / 255.
 
 mat2 Rot(float a) {
     float s=sin(a), c=cos(a);
@@ -90,8 +82,6 @@ float mandelbulbSDF( in vec3 pos)
 }
 
 float GetDist(vec3 p) {
-    //float d = sdBox(p, vec3(1));
-    //float d = length(p)-1.5;
     float d = mandelbulbSDF(p);
     return d;
 }
@@ -151,7 +141,11 @@ void main()
     ro.xz *= Rot(-m.x*6.2831);
     
     vec3 rd = GetRayDir(uv, ro, vec3(0,0.,0), 1.3);
-    vec3 col = vec3(0);
+  
+    // Add background color with gradient
+    vec3 bg = BLUE*(uv.y +.40);
+    bg += PURPLE*(-uv.y+.60);
+    vec3 col = bg;
    
     float d = RayMarch(ro, rd);
 
