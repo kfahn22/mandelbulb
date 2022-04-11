@@ -1,22 +1,23 @@
 # Mandelbulb
 
-## This code uses a shader to render the mandelbulb in P5.js.  It is based on the Coding Train Mandelbulb challenge by Daniel Shiffman.  It also incorporates code written by Inigo Quilez and Jamie Wong.
+## This code uses renders the mandelbulb in P5.js using a signed distance function in a shader.  The launch point is the Coding Train Mandelbulb challenge by Daniel Shiffman.  The frag file also incorporates code written by Inigo Quilez, Martyn Steinrucken, Jamie Wong.
 
 ## 1.  The Spherical function and mandelbulbSDF track as closely as possible to the code written by Daniel Shiffman. 
 
 - [Mandelbulb challenge from theCodingTrain]  https://www.youtube.com/watch?v=NJCiUVGiNyA
 - [Exploration of how to port to P5.js from Shadertoy] https://www.youtube.com/watch?v=7ZIfXu_iPv4
 
-## 2.  Inigo Quilez  has done pioneering work on shaders and is the co-creator of shadertoy.  
-### I have used some of his techniques in the .frag file; 
-- [Inigo Quilez website] https://iquilezles.org
-- [Happy Jumping Livestream] https://youtu.be/Cfe5UQ-1L9Q
+## 2.  Inigo Quilez has done pioneering work on shaders and is the co-creator of shadertoy.  
 
-## 3.  The lighting and ray marching code comes from Jamie Wong.
+### I have used some of his techniques in the .frag file.  His website contains a wealth on information on shaders.
+- [Inigo Quilez website] https://iquilezles.org
+
+## 3.  The lighting and ray marching code in the crystal version of the mandelbulb comes from Jamie Wong.
 - [Ray Marching and Signed Distance Functions] http://jamie-wong.com/2016/07/15/ray-marching-signed-distance-functions/
 - [Link to shadertoy code] https://www.shadertoy.com/view/lt33z7
 
-## 4.  I also highly recommend the wonderful shader tutorials by Martijn Steinrucken 
+## 4.  Martijn Steinrucken has some wonderful wonderful shader tutorials on youtube.  I have used his ray marching starting point in some of the mandelbulb version.  If you want a really good explanation of ray marching, I highly recommend you watch his video on the topic!
+
 - YouTube: youtube.com/TheArtOfCodeIsCool
 - [Ray marching starting point] https://www.shadertoy.com/view/WtGXDD
 
