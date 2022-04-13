@@ -1,0 +1,119 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+	<title>Mandelbulb rendered in P5.js using a SDF - Home</title>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.8.1/css/all.css">
+	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+	<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+	<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.16.0/umd/popper.min.js"></script>
+	<script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+	<link rel="stylesheet" href="../style.css">
+</head>
+
+<body>
+	<header>
+		<h1>Mandelbulb rendered in P5.js using a SDF </h1>
+	</header>
+
+	<div class="flex-container" id="flex">
+		<!--<input class="form-control" id="myInput" type="text" placeholder="Search.."> -->
+
+		<div class="d-flex flex-column" id="myDIV">
+			
+			<div class = "intro" style="flex-grow:1" id="intro">
+			<h2>Introduction</h2>
+            <p>I was first exposed to the mandelbrot set a VERY long time ago when my father (a retired physics professor) became interested in coding it using postscript.
+				I am not sure whether I ever saw his version, but I remember looking at the pictures in the first book published (need title).  I was fascinated with the intricate 
+				designs!
+				
+				Fast forward many decades.  NYU professor Daniel Shiffman (The Coding Train) did a Mandelbulb coding challenge in February using Processing <a class="link" href="https://thecodingtrain.com/CodingChallenges/168-mandelbulb.html">The Mandelbulb</a>. 
+				By the end of the challenge, he had created a point cloud version of the mandelbulb.  He was kind enough to share his code on Discord for the couple of us that were interested 
+				in tryng to render the mandelbulb.  This was the start of my journey--see below for my earliest attempts.
+
+				At this point, I have rendered the mandelbulb using several different light techniques.  I am very please with the three color version, at least compared to my
+				initial attempts.  There is still some aliasing when the colored mandelbulbs are animated, so this is something that needs improvement.  
+			</p>
+			</div>
+			<div class = "mandelbulb" style="flex-grow:1" id="mandelbulb1">
+				<h2>Three Color Mandelbulb</h2>
+				<p>  This rendered version uses the lighting techniques described in The Art of Code:  Bending lighting"
+                      youtube tutorial by Martijn Steinrucken. <a class="link" href="https://www.youtube.com/watch?v=0RWaR7zApEo">Live Coding:  Bending Light</a></a>
+					  Rather than the more advanced method of coloring the mandelbulb using edge detection, each of the x,y,z dimensions is assigned a different RGB color.  
+                      <br>
+					  <img class="img" src="../assets/three_color.png" alt="Three Color Mandelbulb" width="450" height="450">
+					  <br>
+					  <a class="link" href="https://editor.p5js.org/kfahn/full/XF8pZKeRC">Three color mandelbulb sketch</a></a>
+                      <br>
+					  <a class="link" href="https://github.com/kfahn22/mandelbulb/tree/main/Multi_color">Code</a></a>
+                    </p>
+			</div>
+			<div class="mandelbulb" style="flex-grow:1" id="mandelbulb2">
+				<h2>Single Color Mandelbulb</h2>
+				<p>
+                    This version uses the lighting techniques of Inigo Quilez described in his Happy Jumping youtube tutorial. There is quite a bit
+					of aliasing when animating, which is an avenue for future improvement. <a class="link" href="https://www.youtube.com/watch?v=Cfe5UQ-1L9Q">Live Coding and Painting with Maths</a></a>.
+					<br>
+					<img class="img" src="../assets/single_color.png" alt="Single Color Mandelbulb" width="400" height="400">
+					<br>
+					<a class="link" href="https://editor.p5js.org/kfahn/full/3Yp7ZBCMw">Single color mandelbulb sketch</a></a>
+					<br>
+                    <a class="link" href="https://github.com/kfahn22/mandelbulb/tree/main/Blue">Code</a></a>
+                </p>
+            </div>
+            <div class="mandelbulb" style="flex-grow:1" id="mandelbulb3">
+                        <h2>No color mandelbulb</h2>
+                        <p>
+                            <a class="link" href="https://editor.p5js.org/kfahn/full/2nVVeL-RY">Plain mandelbulb sketch</a></a>
+
+                            <a class="link" href="">Code</a></a>
+                        </p>
+				</div>
+			</div>
+            <div class="mandelbulb" style="flex-grow:1" id="mandelbulb4">
+                <h2>"Crystal" mandelbulb</h2>
+                <p>
+                    This is my first render of the mandelbulb in p5.js.  I started out using Jamie Wong's Shadertoy sketch
+                    as a guide, which uses phong illumination <a class="link" href="https://www.shadertoy.com/view/llt3R4">Jamie Wong's shadertoy code</a>. 
+                     I think it is pretty cool looking, but it doesn't animate well.  I suspect this is due to the raydirection
+                     function, and I hope to investigate further to see if I can get this version to animate.
+					 <br>
+					 <img class="img" src="../assets/crystal.png" alt="Crystal Mandelbulb" width="400" height="400">
+					 <br>
+                    <a class="link" href="https://editor.p5js.org/kfahn/full/o5sX5O0cF">Crystal mandelbulb sketch</a></a>
+					<br>
+                    <a class="link" href="https://github.com/kfahn22/mandelbulb/tree/main/Crystal">Code</a></a>
+                </p>
+			</div>
+			<div class="mandelbulb" style="flex-grow:1" id="mandelbulb4">
+                <h2>Earlier Attempts</h2>
+                <p>
+                    I initially tried to render the mandelbulb using MeshLab. Following Dan Shiffman's lead, I loaded the vertices (all . of them)
+					into MeshLab and used a guide a found in github to try to mesh the vertices.  The first version looked rather like a pin cushion because 
+					the normals were facing the wrong direction!  I eventually came up with this version.  While not horrible, it is not fully rendered and it kind of looks 
+					the mandelbulb is in prison.
+                    <br>
+					 <img class="img" src="../assets/meshlab.png" alt="Meshlab Mandelbulb" width="400" height="400">
+					 <br>
+                    For the next attempt, I loaded the vertices into Blender.  I was able to obtain something that looked like a very low-res version of the mandelbulb, but still 
+					doesn't compare to the beauty of a nicely rendered version.
+					<br>
+					<img class="img" src="../assets/blender.png" alt="Blender Mandelbulb" width="400" height="400">
+                    <br>
+					By this point, Dan Shiffman had consulted with some colleauges and concluded that using a SDF would be a 
+					better approach.  During a livestream on Twitch, he explored this possibility and provided the background 
+					that I ultimately used to render the mandelbulb.  <a class="link" href="https://www.youtube.com/watch?v=7ZIfXu_iPv4">Revisiting Mandelbulb</a></a> 
+                </p>
+			</div>
+        </div>
+    </div>
+		
+
+		</div>
+	</div>
+	
+</body>
+
+</html>
