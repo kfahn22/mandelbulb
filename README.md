@@ -16,22 +16,17 @@
 - [Ray Marching and Signed Distance Functions] http://jamie-wong.com/2016/07/15/ray-marching-signed-distance-functions/
 - [Link to shadertoy code] https://www.shadertoy.com/view/lt33z7
 
-## 4.  Martijn Steinrucken has some wonderful wonderful shader tutorials on youtube.  I have used his ray marching starting point in some of the mandelbulb version.  If you want a really good explanation of ray marching, I highly recommend you watch his video on the topic!
+## 4.  Martijn Steinrucken has some wonderful wonderful shader tutorials on youtube.  I have used his ray marching starting point in the three color mandelbulb version.  If you want a really good explanation of ray marching, I highly recommend you watch his video on the topic!
 
 - YouTube: youtube.com/TheArtOfCodeIsCool
 - [Ray marching starting point] https://www.shadertoy.com/view/WtGXDD
 
-## 4.  Link to the Multiple Color Verson of P5.sj sketch
+## 5.  Link to the three Color Verson of P5.sj sketch
 
 - https://editor.p5js.org/kfahn/full/XF8pZKeRC
 - https://editor.p5js.org/kfahn/sketches/XF8pZKeRC
 
-## 5.  Link to the Blue version of P5.js sketch
-
-- https://editor.p5js.org/kfahn/full/vt00q_BhB
-- https://editor.p5js.org/kfahn/sketches/vt00q_BhB
-
-## 6.  Link to the Regular version of the p5.js sketch
+## 6.  Link to the one color version of P5.js sketch
 
 - https://editor.p5js.org/kfahn/full/3Yp7ZBCMw
 - https://editor.p5js.org/kfahn/sketches/3Yp7ZBCMw
@@ -41,7 +36,9 @@
 - https://editor.p5js.org/kfahn/full/o5sX5O0cF
 - https://editor.p5js.org/kfahn/sketches/o5sX5O0cF
 
-## 8.   Future Work
+## 8.   Future Improvements
 
-- Try to figure out why the mandelbulb render is so different from the "crystal" version when animation is added.
-- Continue to improve efficiency and lighting.
+- Try to address aliasing.
+- Try to implement true edge detection
+- Work on generalizing mandelbulb SDF algorithm to other powers (it currently only works for n=8).
+- Try to animate "crystal" version
