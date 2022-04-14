@@ -28,6 +28,11 @@ h2 {
     color: #ffffff;
     text-transform: uppercase;
 }
+div {
+    padding-top: 2%;
+    padding-bottom: 2%;
+}
+
 img {
     display: block;
     margin-left: auto;
@@ -58,18 +63,9 @@ img {
     text-decoration: none;
 }
 
-p {
-    padding: 2%;
-}
-
 #mandelbulb {
-    padding: 5%;
-
-    margin-top: 2%;
     color: #fff;
     overflow: scroll;
-    margin-left: 1%;
-    margin-right: 2%;
     /*max-height: 375px;*/
 }
 
@@ -113,18 +109,6 @@ nav .topNav {
     color: #0D78AA;
     background-color: #ffffff;
     opacity: 80%;
-}
-
-
-a:hover #genLink {
-    background-color: tranparent !important;
-    color: #ffffff;
-}
-
-#demo {
-
-    margin-left: 2%;
-    margin-right: 2%;
 }
 
 .flex-container {
