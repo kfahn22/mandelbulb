@@ -32,28 +32,27 @@
 					designs!
 
 					Fast forward many decades. NYU professor Daniel Shiffman (The Coding Train) did a Mandelbulb coding
-					challenge in February using Processing <a class="link"
-						href="https://thecodingtrain.com/CodingChallenges/168-mandelbulb.html">The Mandelbulb</a>.
-					By the end of the challenge, he had created a point cloud version of the mandelbulb! He was kind
+					challenge in February using Processing. By the end of the challenge, he had created a point cloud
+					version of the mandelbulb! He was kind
 					enough to share his .txt file and processing code in the Coding Train Discord for a couple of us
-					that were interested
-					in tryng to render the mandelbulb. This was the start of my journey--see below for my earliest
-					attempts.
+					that were interested in tryng to render the mandelbulb. This was the start of my journey--see below
+					for my earliest
+					attempts.<a class="link" href="https://thecodingtrain.com/CodingChallenges/168-mandelbulb.html">The
+						Mandelbulb</a>
 
 					At this point, I have rendered the mandelbulb using several different lighting techniques. There is
 					still a lot of room for improvement--I do not have true edge detection and there is aliasing when
 					the mandelbulbs are animated. Nonetheless, I am still excited with the results, especially the thee
 					color version. </p>
-				<br>
 				<p></p>
 				One thing to note is that uvs in shaders have floating point values from 0.0, 1.0 instead of 0 to 255.
 				Ultimately, each pixel is colored according to its uv value that is passed
 				to gl_FragColor at the end of the frag file. The values are usually set initially to 0.0 or some
 				background color and then changed by adding or multiplying using matrix operations.
 				It is possible to inadvertantly set some (or all) of the uvs to 1.0 which will result in an over-exposed
-				object or could even a white screen. Another thing to note is that the three color version renders
-				fairly quickly, but the other versions are
-				slower and I think they are consuming a lot of computing power.
+				object or even a white screen. Another thing to note is that while the three color version renders
+				fairly quickly, but the other versions are slower and I think they are consuming a lot of computing
+				power.
 				</p>
 			</div>
 			<div class="mandelbulb" style="flex-grow:1" id="mandelbulb1">

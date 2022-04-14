@@ -31,8 +31,12 @@ h2 {
 div {
     padding-top: 2%;
     padding-bottom: 2%;
+    
 }
 
+p {
+    font-size: 100%;
+}
 img {
     display: block;
     margin-left: auto;
