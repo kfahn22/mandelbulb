@@ -1,4 +1,4 @@
-// Frag shader code is based on code from Daniel Shiffman, Inigo Quelez, Jamie Wong, Martijn Steinrucken (aka the Art of Coding)
+// The frag shader code is based on code from Daniel Shiffman, Inigo Quelez, Jamie Wong, Martijn Steinrucken (aka the Art of Coding)
 
 // Mandelbulb challenge from theCodingTrain
 // https://www.youtube.com/watch?v=NJCiUVGiNyA
@@ -23,12 +23,27 @@ precision mediump float;
 uniform vec2 u_resolution; 
 uniform vec2 iMouse;
 uniform float iFrame;
+uniform float iTime;
 
 // const int MAX_MARCHING_STEPS = 255;
 const float MIN_DIST = 0.0;
 const float MAX_DIST = 20.0;
 const float epsilon = 0.0001;
 
+#define BG backgroundGradient
+
+// The uvs are floating point with a range of [0.0,1.0] so we normalize by dividing by 255.
+#define PURPLE vec3(83, 29,109) / 255.
+#define RED vec3(191, 18, 97) / 255.
+#define ORANGE vec3(251,162, 100) / 255.
+#define BLUE vec3(118, 212, 229) / 255.
+
+// Function to add background color
+vec3 backgroundGradient(vec2 uv, vec3 col1, vec3 col2, float m) {
+  float k = uv.y*m + m;
+  vec3 col = mix(col1, col2, k);
+  return col;
+}
 
 // Function to extract polar coordinates
 // Comparable to Spherical class in coding train mandelbulb challenge
@@ -137,7 +152,7 @@ void main() {
     // add a target for the camera
     vec3 ta = vec3(0.0,0.0,0.0);
     
-    float an = 0.005 * iFrame;
+    float an = 0.005 * iTime;
     //float an = 10.0*iMouse.x/u_resolution.x;
     vec3 ro = ta + vec3(1.5*sin(an),0.0,1.5*cos(an));  // origin of camera (ta moves camera up)
     
@@ -149,9 +164,8 @@ void main() {
     
     vec3 rd = normalize( p.x*uu +p.y*vv +0.7*ww );  // lens of camera
   
-    vec3 col = vec3(1.0, 0.866, 0.);
+    vec3 col = BG(p,PURPLE, BLUE, .2 ); //vec3(1.0, 0.866, 0.);
    
-    //float t = shortestDistanceToSurface( ro, rd, MIN_DIST, MAX_DIST);
     float t = castRay( ro, rd);
   
    if ( t > 0.0 )
@@ -159,14 +173,14 @@ void main() {
       vec3 pos = ro + t*rd;
       vec3 nor = calcNormal(pos);
       
-      vec3 mate = vec3(0.01, 0.341, 0.721); // Use base color for objects
+      // Base color for mandelbulb
+      vec3 mate = BG(p, RED, PURPLE, .8);
       
       vec3 sun_dir = normalize(vec3(1.0,0.2,0.2) );
       float sun_dif = clamp( dot(nor,sun_dir),0.0,1.0);
      
      // add shallows; offset to prevent self intersections 
       float dist = shortestDistanceToSurface(pos + nor*0.001, sun_dir, MIN_DIST, MAX_DIST);
-      //float sun_sha = step(castRay( pos + nor*0.001, sun_dir), 0.00); 
       float sun_sha = step(dist, 0.05); 
       float sky_dif = clamp( 0.5 + 0.5*dot(nor,vec3(0.0,1.0,0.0)), 0.0, 1.0);
      
@@ -174,15 +188,17 @@ void main() {
      float bou_dif = clamp( 0.5 + 0.5*dot(nor,vec3(0.0,-1.0,0.0)), 0.0, 1.0); 
       
      float dif = 0.5 + clamp(0.5* dot(nor,sun_dir), 1.0, 1.0);
+     
      // add key lighting
-      
-     col = mate*vec3(7.0,4.0,4.0)*sun_dif*sun_sha; 
+       
+     //col = mate*vec3(7.0,4.0,4.0)*sun_dif*sun_sha; 
+      col = mate*vec3(1.0,1.0,1.0)*sun_dif*sun_sha; 
      col += mate*vec3(0.5,0.8,0.9)*sky_dif; // fill light has a value about 1
      col += mate*vec3(0.7,0.5,0.3)*bou_dif; 
    }
   
      // include gamma correction right from beginning 
-    col = pow( col, vec3(0.4545) ); 
+    //col = pow( col, vec3(0.4545) ); 
     
     // Output to screen
     gl_FragColor = vec4(col,1.0);

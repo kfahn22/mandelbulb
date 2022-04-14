@@ -1,5 +1,5 @@
 // This code is based on the Mandelbulb Coding Train Challenge by Daniel Shiffman
-// See the basic.frag file for more information
+// See the starter.frag file for more information
 // This code renders a static image of the mandelbulb using ray marching with phong illumination. 
 
 // You can find the code for other versions that you can rotate in my github respository
@@ -34,3 +34,7 @@ function draw() {
   rect(0,0,width, height);
 }
 
+// function mousePressed() {
+// saveFrames('crystal_mandelbulb', 'png', 1, 1);
+
+// }
