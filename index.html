@@ -40,10 +40,7 @@
 				to gl_FragColor at the end of the frag file.  The values are usually set initially to 0.0 or some background color and then changed by adding or multiplying using matrix operations. 
 				 It is possible to inadvertantly set some (or all) of the uvs to 1.0 which will result in an over-exposed object or could even a white screen.
 
-				)
-			
-
-
+				 Another thing to note is that the three color version renders fairly quickly, but the other versions are slower and I think they are consuming a lot of computing power.
 			</p>
 			</div>
 			<div class = "mandelbulb" style="flex-grow:1" id="mandelbulb1">
@@ -63,7 +60,9 @@
 				<h2>Single Color Mandelbulb</h2>
 				<p>
                     This version uses the lighting techniques of Inigo Quilez described in his Happy Jumping youtube tutorial. There is quite a bit
-					of aliasing when animating, which is an avenue for future improvement. <a class="link" href="https://www.youtube.com/watch?v=Cfe5UQ-1L9Q">Live Coding and Painting with Maths</a></a>.
+					of aliasing when animating, which is an avenue for future improvement. 
+					<br>
+					<a class="link" href="https://www.youtube.com/watch?v=Cfe5UQ-1L9Q">Live Coding and Painting with Maths</a></a>.
 					<br>
 					<img class="img" src="assets/single_color.png" alt="Single Color Mandelbulb" width="400" height="400">
 					<br>

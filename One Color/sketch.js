@@ -1,23 +1,17 @@
 // This code is based on the Mandelbulb Coding Train Challenge by Daniel Shiffman
 // See the starter.frag file for more information
-// This code renders an image of the mandelbulb using ray marching. 
+// This code renders a static image of the mandelbulb using ray marching with phong illumination. 
 
 // You can find the code for other versions in my github respository
 // https://github.com/kfahn22/mandelbulb
-// Additional Shader resources cab be found here at https://github.com/kfahn22/Shader-Resources
 
-
-// I have found that it is best to pull colors from an image to only one dimension.
-let textureImg;
+// Note:  this version is a little pixelated and I think it uses a lot of computing power
 
 // a shader variable
 let theShader;
 
 function preload(){
   // load the shader
-  // Monochromatic images works best
-  // The image gets added to the "inside" of the mandelbulb
-  textureImg = loadImage("assets/orange_sunset.PNG");
   theShader = loadShader('starter.vert', 'starter.frag');
 }
 
@@ -30,13 +24,12 @@ function setup() {
 
 function draw() {  
   background(0);
-
+  //texture(img);
   // send resolution of sketch into shader
   theShader.setUniform('u_resolution', [width, height]);
   theShader.setUniform("iMouse", [mouseX, map(mouseY, 0, height, height, 0)]);
+   theShader.setUniform("iTime", millis()/1000.);
   theShader.setUniform("iFrame", frameCount);
-  theShader.setUniform("iTime", millis()/1000.);
-  theShader.setUniform("tex0", textureImg);
   
   // shader() sets the active shader with our shader
   shader(theShader);
@@ -45,3 +38,7 @@ function draw() {
   rect(0,0,width, height);
 }
 
+// function mousePressed() {
+// saveFrames('mandelbulb', 'png', 1, 1);
+
+// }
