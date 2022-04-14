@@ -1,0 +1,219 @@
+body {
+    padding: 1%;
+    margin-top: 0;
+    margin-bottom: 1%;
+    /*background: linear-gradient( #531D6D,#BF1639);*/
+    background-repeat: repeat;
+    background-color: #531D6D;
+}
+
+header {
+    background: linear-gradient( #531D6D,#BF1639);;
+    height: 10vh;
+    margin-bottom: 4%;
+    
+}
+
+h1 {
+    padding: 1%;
+    font-size: 200%;
+    text-align: center;
+    text-transform: uppercase;
+    color: #FFFFFF;
+}
+
+h2 {
+    padding: 1%;
+    font-size: 130%;
+    color: #ffffff;
+    text-transform: uppercase;
+}
+img {
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+    border: 10px solid #fff;
+    border-radius: 4px;
+    padding: 5px;
+    object-fit: contain;
+}
+
+#home {
+    position: absolute;
+    right: 10px;
+    top: 10px;
+    display: block;
+    background-color: #ffffff;
+}
+
+.link {
+    color: #BF1639;
+    text-decoration: none;
+
+}
+
+.link:hover {
+    background-color: #fff;
+    color: #EFBDEB;
+    text-decoration: none;
+}
+
+#mandelbulb {
+    padding: 5%;
+
+    margin-top: 2%;
+    color: #fff;
+    overflow: scroll;
+    margin-left: 1%;
+    margin-right: 2%;
+    /*max-height: 375px;*/
+}
+
+#text {
+    display: none;
+}
+
+
+div.intro {
+    margin-left: 10%;
+    margin-right: 10%;
+}
+div.mandelbulb {
+    margin-left: 10%;
+    margin-right: 10%;
+}
+
+/*Hide nav bar for mobile devices*/
+nav .topNav {
+    visibility: hidden !important;
+}
+
+
+
+/* When you mouse over the navigation links, change their color */
+.overlay a:hover,
+.overlay a:focus {
+    color: #5eb5fb;
+    background-color: #ffffff;
+}
+
+/* Position the close button (top right corner) */
+.overlay .closebtn {
+    position: absolute;
+    top: 20px;
+    right: 45px;
+    font-size: 60px;
+}
+
+.active {
+    color: #0D78AA;
+    background-color: #ffffff;
+    opacity: 80%;
+}
+
+
+a:hover #genLink {
+    background-color: tranparent !important;
+    color: #ffffff;
+}
+
+#demo {
+
+    margin-left: 2%;
+    margin-right: 2%;
+}
+
+.flex-container {
+    display: flex;
+    color: #fff;
+    flex-direction: column;
+    /*height: 88vh;*/
+    justify-content: space-between;
+}
+
+
+/* When the height of the screen is less than 450 pixels, change the font-size of
+the links and position the close button again, so they don't overlap */
+@media screen and (max-height: 450px) {
+    .overlay a {
+        font-size: 20px
+    }
+
+    .overlay .closebtn {
+        font-size: 40px;
+        top: 15px;
+        right: 35px;
+    }
+}
+
+@media screen and (min-width: 600px) {
+    #ham {
+        display: none;
+    }
+
+
+    .topNav {
+        width: 100%;
+        text-align: center;
+    }
+
+    .topNav a {
+        visibility: visible;
+        background-color: transparent;
+        color: white;
+        font-weight: bold;
+        font-size: 100%;
+        text-align: center;
+        width: 20%;
+        padding: 2px;
+        text-decoration: none;
+        border: 4px solid #ffffff;
+        border-radius: 4px;
+        margin-top: 5%;
+        margin-left: 5%;
+        margin-right: 5%;
+    }
+
+    .topNav a:active {
+        color: #60fbff !important;
+        border: 4px solid #60fbff;
+    }
+
+    .topNav a:hover {
+        color: #30a0fc;
+        border: 4px solid #30a0fc;
+    }
+
+    .flex-container {
+        flex-direction: column;
+    }
+
+}
+
+
+/* When the screen is less than 600 pixels wide, hide all links, except for the first one ("Home").
+ Show the link that contains should open and close the topnav (.icon) */
+@media screen and (min-width: 600px) {
+    .topnav a:not(:first-child) {
+        display: flex;
+    }
+
+    .topnav a.icon {
+        display: none;
+    }
+}
+
+/* The "responsive" class is added to the topnav with JavaScript when the user clicks on the icon.
+This class makes the topnav look good on small screens (display the links vertically instead of horizontally) */
+@media screen and (min-width: 780px) {
+    .topnav.responsive a {
+        float: none;
+        display: flex;
+    }
+}
+
+@media only screen and (min-width: 780px) {
+    .flex-container {
+        flex-direction: column;
+    }
+}
