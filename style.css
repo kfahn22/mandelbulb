@@ -58,6 +58,10 @@ img {
     text-decoration: none;
 }
 
+p {
+    padding: 2%;
+}
+
 #mandelbulb {
     padding: 5%;
 
