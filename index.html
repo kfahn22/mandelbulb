@@ -30,11 +30,11 @@
 				designs!
 				
 				Fast forward many decades.  NYU professor Daniel Shiffman (The Coding Train) did a Mandelbulb coding challenge in February using Processing <a class="link" href="https://thecodingtrain.com/CodingChallenges/168-mandelbulb.html">The Mandelbulb</a>. 
-				By the end of the challenge, he had created a point cloud version of the mandelbulb.  He was kind enough to share his .txt file and code on Discord for a couple of us that were interested 
+				By the end of the challenge, he had created a point cloud version of the mandelbulb!  He was kind enough to share his .txt file and processing code in the Coding Train Discord for a couple of us that were interested 
 				in tryng to render the mandelbulb.  This was the start of my journey--see below for my earliest attempts.
 
-				At this point, I have rendered the mandelbulb using several different lighting techniques.  I am very please with the three color version, at least compared to my
-				initial attempts.  There is still some aliasing when the colored mandelbulbs are animated, so this is something that needs improvement.  
+				At this point, I have rendered the mandelbulb using several different lighting techniques. There is still a lot of room for improvement--I do not have true edge detection and there is aliasing when the mandelbulbs are animated. 
+				Nonetheless, I am still excited with the results, especially the thee color version.  
 
 				One thing to note is that uvs in shaders have floating point values from 0.0, 1.0 instead of 0 to 255.  Ultimately, each pixel is colored according to its uv value that is passed 
 				to gl_FragColor at the end of the frag file.  The values are usually set initially to 0.0 or some background color and then changed by adding or multiplying using matrix operations. 
