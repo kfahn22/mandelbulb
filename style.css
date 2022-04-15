@@ -76,11 +76,13 @@ div.intro {
 }
 
 div.mandelbulb {
-    margin-left: 2%;
-    margin-right: 2%;
+    margin-left: 5%;
+    margin-right: 5%;
+    padding: 5%;
     background-color: #fff;
-    opacity: 80%;
-    border: 4px;
+    opacity: 50%;
+    border: 10px solid #fff;
+
     color: #2F0841;;
 }
 
