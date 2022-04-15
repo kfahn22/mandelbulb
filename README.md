@@ -10,17 +10,17 @@
 ## 2.  Inigo Quilez has done pioneering work on shaders and is the co-creator of shadertoy.  I have used some of his techniques in the .frag file.  His website contains a wealth on information on shaders.
 - [Inigo Quilez website] https://iquilezles.org
 
-## 3.  The lighting and ray marching code in the crystal version of the mandelbulb comes from Jamie Wong.
-- [Ray Marching and Signed Distance Functions] http://jamie-wong.com/2016/07/15/ray-marching-signed-distance-functions/
-- [Link to shadertoy code] https://www.shadertoy.com/view/lt33z7
-
-## 4.  Martijn Steinrucken has some wonderful wonderful shader tutorials on youtube.  I have used his ray marching starting point in the three color mandelbulb version.  If you want a really good explanation of ray marching, I highly recommend you watch his video on the topic!
+## 3.  Martijn Steinrucken has some wonderful wonderful shader tutorials on youtube.  I have used his ray marching starting point in the one and three color versions.  If you want a really good explanation of ray marching, I highly recommend you watch his video on the topic!
 
 - YouTube: youtube.com/TheArtOfCodeIsCool
 - https://www.youtube.com/watch?v=PGtv-dBi2wE
 - [Ray marching starting point] https://www.shadertoy.com/view/WtGXDD
 
-## 5.  Link to the three Color Verson of P5.sj sketch
+## 4.  The lighting and ray marching code in the crystal version of the mandelbulb comes from Jamie Wong.
+- [Ray Marching and Signed Distance Functions] http://jamie-wong.com/2016/07/15/ray-marching-signed-distance-functions/
+- [Link to shadertoy code] https://www.shadertoy.com/view/lt33z7
+
+## 5.  Link to the three color verson of P5.sj sketch
 
 - https://editor.p5js.org/kfahn/full/XF8pZKeRC
 - https://editor.p5js.org/kfahn/sketches/XF8pZKeRC
