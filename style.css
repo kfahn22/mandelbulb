@@ -92,6 +92,7 @@ div.mandelbulb {
     /*opacity: 50%;*/
     /*border: 10px solid #fff;*/
     color: #2F0841;
+    width: 40vw;
     flex-direction: column;
 }
 
