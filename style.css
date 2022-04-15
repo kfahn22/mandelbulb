@@ -174,7 +174,7 @@ the links and position the close button again, so they don't overlap */
     }
 
     .flex-container {
-        flex-direction: column;
+        flex-direction: row;
     }
 
 }
