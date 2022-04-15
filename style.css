@@ -10,16 +10,17 @@ body {
 header {
     background: linear-gradient( #531D6D,#BF1639);;
     height: 15vh;
-    margin-bottom: 4%;
+    margin-top: 2%;
+    margin-bottom: 2%;
     
 }
 
 h1 {
-    padding: 1%;
+    padding: 2%;
     font-size: 230%;
     text-align: center;
     text-transform: uppercase;
-    color: #2F0841;
+    color: #fff;
 }
 
 h2 {
