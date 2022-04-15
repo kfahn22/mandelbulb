@@ -64,29 +64,22 @@ img {
     text-decoration: none;
 }
 
-#mandelbulb {
-    background-color: #fff;
-    opacity: 70%;
-    border: 4px;
-    color: #2F0841;
-    overflow: scroll;
-    /*max-height: 375px;*/
-}
-
 #text {
     display: none;
 }
 
 
 div.intro {
-    margin-left: 10%;
-    margin-right: 10%;
+    font-size: 120%;
+    margin-left: 5%;
+    margin-right: 5%;
 }
+
 div.mandelbulb {
-    margin-left: 10%;
-    margin-right: 10%;
+    margin-left: 2%;
+    margin-right: 2%;
     background-color: #fff;
-    opacity: 70%;
+    opacity: 80%;
     border: 4px;
     color: #2F0841;;
 }
