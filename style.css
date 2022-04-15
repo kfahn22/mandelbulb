@@ -71,8 +71,8 @@ img {
 
 div.intro {
     font-size: 120%;
-    margin-left: 5%;
-    margin-right: 5%;
+    margin-left: 2%;
+    margin-right: 2%;
     padding: 2%;
     background-color: #fff;
     color: #2F0841;
@@ -81,9 +81,11 @@ div.intro {
 div.mandelbulb {
     /*margin-left: 5%;
     margin-right: 5%;*/
-    margin: 5%;
+    margin-left: 2%;
+    margin-right: 2%;
     padding: 2%;
     background-color: #fff;
+    font-size: 120%;
     /*opacity: 50%;*/
     /*border: 10px solid #fff;*/
     color: #2F0841;
