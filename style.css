@@ -73,6 +73,8 @@ div.intro {
     font-size: 120%;
     margin-left: 5%;
     margin-right: 5%;
+    background-color: #fff;
+    color: #2F0841;
 }
 
 div.mandelbulb {
@@ -83,7 +85,7 @@ div.mandelbulb {
     background-color: #fff;
     /*opacity: 50%;*/
     /*border: 10px solid #fff;*/
-    color: #2F0841;;
+    color: #2F0841;
 }
 
 /*Hide nav bar for mobile devices*/
