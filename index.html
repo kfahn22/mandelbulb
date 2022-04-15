@@ -139,7 +139,8 @@
 					<a class="link" href="https://github.com/kfahn22/mandelbulb/tree/main/Crystal">Code</a></a>
 				</p>
 			</div>
-
+		</div>
+		<div class="d-flex flex-row" id="myDIV">
 			<div class="mandelbulb" style="flex-grow:1" id="mandelbulb4">
 				<h2>Earlier Attempts</h2>
 				<p>
@@ -171,53 +172,54 @@
 				</p>
 			</div>
 		</div>
+	</div>
 
 
-		<!-- javascript -->
-		<!-- This function toggles a read more button -->
-		<script>
-			$(document).ready(function () {
-				$("#myInput").on("keyup", function () {
-					var value = $(this).val().toLowerCase();
-					$("#myDIV *").filter(function () {
-						$(this).toggle($(this).text().toLowerCase().indexOf(value) > -1)
-					});
+	<!-- javascript -->
+	<!-- This function toggles a read more button -->
+	<script>
+		$(document).ready(function () {
+			$("#myInput").on("keyup", function () {
+				var value = $(this).val().toLowerCase();
+				$("#myDIV *").filter(function () {
+					$(this).toggle($(this).text().toLowerCase().indexOf(value) > -1)
 				});
 			});
-		</script>
+		});
+	</script>
 
-		<!-- This function is for a Read more read less button -->
-		<!-- Code found on codepen legendaryPower "Simple Read Less Read More Button"-->
-		<script>
-			$(document).ready(function () {
-				$("#toggle").click(function () {
-					var elem = $("#toggle").text();
-					if (elem == "Answer") {
-						//Stuff to do when btn is in the read more state
-						$("#toggle").text("Close");
-						$("#text").slideDown();
-					} else {
-						//Stuff to do when btn is in the read less state
-						$("#toggle").text("Answer");
-						$("#text").slideUp();
-					}
-				});
+	<!-- This function is for a Read more read less button -->
+	<!-- Code found on codepen legendaryPower "Simple Read Less Read More Button"-->
+	<script>
+		$(document).ready(function () {
+			$("#toggle").click(function () {
+				var elem = $("#toggle").text();
+				if (elem == "Answer") {
+					//Stuff to do when btn is in the read more state
+					$("#toggle").text("Close");
+					$("#text").slideDown();
+				} else {
+					//Stuff to do when btn is in the read less state
+					$("#toggle").text("Answer");
+					$("#text").slideUp();
+				}
 			});
-		</script>
+		});
+	</script>
 
-		<!--This function open and closes a curtain overlay -->
+	<!--This function open and closes a curtain overlay -->
 
-		<script>
-			/* Open when someone clicks on the span element */
-			function openNav() {
-				document.getElementById("myNav").style.width = "100%";
-			}
+	<script>
+		/* Open when someone clicks on the span element */
+		function openNav() {
+			document.getElementById("myNav").style.width = "100%";
+		}
 
-			/* Close when someone clicks on the "x" symbol inside the overlay */
-			function closeNav() {
-				document.getElementById("myNav").style.width = "0%";
-			}
-		</script>
+		/* Close when someone clicks on the "x" symbol inside the overlay */
+		function closeNav() {
+			document.getElementById("myNav").style.width = "0%";
+		}
+	</script>
 </body>
 
 </html>
