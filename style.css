@@ -92,6 +92,7 @@ div.mandelbulb {
     /*opacity: 50%;*/
     /*border: 10px solid #fff;*/
     color: #2F0841;
+    flex-direction: column;
 }
 
 /*Hide nav bar for mobile devices*/
