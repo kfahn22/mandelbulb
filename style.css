@@ -9,7 +9,7 @@ body {
 
 header {
     background: linear-gradient( #531D6D,#BF1639);;
-    height: 10vh;
+    height: 15vh;
     margin-bottom: 4%;
     
 }
@@ -19,7 +19,7 @@ h1 {
     font-size: 230%;
     text-align: center;
     text-transform: uppercase;
-    color: #FFFFFF;
+    color: #FFF;
 }
 
 h2 {
@@ -83,6 +83,7 @@ div.mandelbulb {
     margin-right: 5%;*/
     margin-left: 2%;
     margin-right: 2%;
+    margin-bottom: 2%;
     padding: 2%;
     background-color: #fff;
     font-size: 120%;
