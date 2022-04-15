@@ -27,11 +27,8 @@ h2 {
     font-size: 150%;
     color: #ffffff;
     text-transform: uppercase;
-}
-div {
-    padding-top: 2%;
-    padding-bottom: 2%;
-    
+    /*adding-top: 2%;*/
+    padding-bottom: 4%;
 }
 
 p {
