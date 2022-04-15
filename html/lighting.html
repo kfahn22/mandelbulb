@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <title>Mandelbulb rendered in P5.js using a SDF - Home</title>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.8.1/css/all.css">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.16.0/umd/popper.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+    <link rel="stylesheet" type="text/css" href="style.css">
+</head>
+
+<body>
+    <div class="d-flex flex-row" id="myDIV2">
+        <div class="mandelbulb" style="flex-grow:1" id="mandelbulb3">
+
+            <p>
+                <h2>Mandelbulb using Inigo Quilez lighting</h2>
+                <br>
+                This version uses the lighting techniques of Inigo Quilez in his Happy Jumping youtube
+                tutorial. Inigo Quilez is an expert at lighting, and the parameters were optimized for his animation
+                of a blobby monster jumping. I had a hard time trying to figure out how to change his lighting
+                lighting parameters--I think this is the reason that this version is over-exposed. There is also quite a
+                bit
+                of aliasing when it is animating. Improving the lighting and animation are avenues for future
+                improvement.
+                <br>
+                <a class="link" href="https://www.youtube.com/watch?v=Cfe5UQ-1L9Q">Live Coding and Painting with
+                    Maths</a></a>.
+                <br>
+                <br>
+                <img class="img" src="assets/single_color1.png" alt="Single Color Mandelbulb:  Version 2" width="400"
+                    height="400">
+                <br>
+                <a class="link" href="https://editor.p5js.org/kfahn/full/3Yp7ZBCMw">Single color mandelbulb
+                    sketch</a></a>
+                <br>
+                <a class="link" href="https://github.com/kfahn22/mandelbulb/tree/main/IQ_Lighting">Code</a></a>
+            </p>
+        </div>
+
+        <div class="mandelbulb" style="flex-grow:1" id="mandelbulb4">
+
+            <p>
+                <h2>"Crystal" mandelbulb</h2>
+                <br>
+                This is my first render of the mandelbulb in p5.js. I started out using Jamie Wong's Shadertoy
+                sketch
+                as a guide, which uses phong illumination .
+                I think it is pretty cool looking, but it doesn't animate well. I suspect this is due to the
+                raydirection
+                function, and I hope to investigate further to see if I can get this version to animate.
+                <br>
+                <a class="link" href="https://www.shadertoy.com/view/llt3R4">Jamie
+                    Wong's shadertoy code</a>
+                <br>
+                <img class="img" src="assets/crystal.png" alt="Crystal Mandelbulb" width="500" height="500">
+                <br>
+                <a class="link" href="https://editor.p5js.org/kfahn/full/o5sX5O0cF">Crystal mandelbulb
+                    sketch</a></a>
+                <br>
+                <a class="link" href="https://github.com/kfahn22/mandelbulb/tree/main/Crystal">Code</a></a>
+            </p>
+        </div>
+    </div>
+</body>
+
+</html>
