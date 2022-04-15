@@ -65,6 +65,9 @@ img {
 }
 
 #mandelbulb {
+    background-color: #fff;
+    opacity: 70%;
+    border: 4px;
     color: #fff;
     overflow: scroll;
     /*max-height: 375px;*/
