@@ -5,10 +5,13 @@
 // Exploration of how to port from Shadertoy to P5.js
 // https://www.youtube.com/watch?v=7ZIfXu_iPv4
 
-// https://iquilezles.org/www/articles/mandelbulb/mandelbulb.htm
-
 // YouTube: youtube.com/TheArtOfCodeIsCool
 // Refer to the Ray marching starting point video for a good explanation of Ray marching 
+// Ray marching for dummies:  https://www.youtube.com/watch?v=PGtv-dBi2wE
+// Shader toy ray marching starting point:  https://www.shadertoy.com/view/WtGXDD
+// Live Codig Bending Light: https://www.youtube.com/watch?v=0RWaR7zApEo
+
+// https://iquilezles.org/www/articles/mandelbulb/mandelbulb.htm
 
 #ifdef GL_ES
 precision mediump float;
@@ -23,11 +26,12 @@ uniform sampler2D tex0;
 
 // Define some global variables and color scheme
 #define S smoothstep
-#define BG backgroundGradient
+#define CG colorGradient
 #define MAX_STEPS 100
 #define MAX_DIST 100.
 #define SURF_DIST .001
 
+// Color scheme
 // The uvs are floating point with a range of [0.0,1.0] so we normalize by dividing by 255.
 #define PURPLE vec3(83, 29,109) / 255.
 #define RED vec3(191, 18, 97) / 255.
@@ -37,14 +41,14 @@ uniform sampler2D tex0;
 // This is not really doing anything for this sketch, but this is how you pass in a texture
 #define TEXTURE texture2D(tex0, p.yz*.5+0.5).rgb
 
-// Function to create a background gradient
-vec3 backgroundGradient(vec2 uv, vec3 col1, vec3 col2, float m) {
+// Function to create a color gradient
+vec3 colorGradient(vec2 uv, vec3 col1, vec3 col2, float m) {
   float k = uv.y*m + m;
   vec3 col = mix(col1, col2, k);
   return col;
 }
 
-// Function to add color to mandelbulb
+// Function to add color to mandelbulb using x,y,z dimensions
 vec3 colXYZ( vec3 col1, vec3 col2, vec3 col3, vec3 n)
   {
         vec3 colXY = col1;  // front and back insdie and outside
@@ -60,6 +64,7 @@ vec3 colXYZ( vec3 col1, vec3 col2, vec3 col3, vec3 n)
        return col;
 }
 
+// Handy rotation matrix function
 mat2 Rot(float a) {
     float s=sin(a), c=cos(a);
     return mat2(c, -s, s, c);
@@ -174,7 +179,7 @@ void main()
     // Camera origin -- best to leave this alone 
     vec3 ro = vec3(0, 3, -3);  
   
-    // Location of object--mandelbulb is placed in center of screen.
+    // Location of object--mandelbulb is placed in the center of screen.
     // Note that vec3(0) is equivalent to vec3(0,0,0)
     vec3 lookat = vec3(0);  
   
@@ -189,7 +194,7 @@ void main()
     vec3 rd = GetRayDir(uv, ro, lookat, zoom);
   
     // Add a background color with gradient
-    vec3 col = BG(uv, PURPLE, BLUE, .4);
+    vec3 col = CG(uv, PURPLE, BLUE, .4);
    
     // Find distance to the mandelbulb
     float d = RayMarch(ro, rd);
@@ -206,8 +211,8 @@ void main()
         
         // Add color to the mandelbulb
         // This is not true color mapping as there is no edge detection
-        // Any texture added to the mandelbulb gets added inside
-        // Change code in the sketch file to clearbeads.png to see difference
+        // Any texture added to the mandelbulb gets added "inside"
+        // Change the code in the sketch file to clearbeads.png to see difference
         // The TEXTURE code is provided as a guide to add it to other objects
         col = colXYZ(PURPLE, RED, TEXTURE, n);
     }
