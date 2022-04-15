@@ -68,7 +68,7 @@ img {
     background-color: #fff;
     opacity: 70%;
     border: 4px;
-    color: #fff;
+    color: #2F0841;
     overflow: scroll;
     /*max-height: 375px;*/
 }
@@ -85,6 +85,10 @@ div.intro {
 div.mandelbulb {
     margin-left: 10%;
     margin-right: 10%;
+    background-color: #fff;
+    opacity: 70%;
+    border: 4px;
+    color: #2F0841;;
 }
 
 /*Hide nav bar for mobile devices*/
