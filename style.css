@@ -148,6 +148,9 @@ the links and position the close button again, so they don't overlap */
         top: 15px;
         right: 35px;
     }
+    h2 {
+        font-size: 100%;
+    }
 }
 
 @media screen and (min-width: 600px) {

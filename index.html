@@ -75,8 +75,10 @@
 				This rendered version uses the lighting techniques described in The Art of Code: Bending lighting"
 				youtube tutorial by Martijn Steinrucken. Rather than the more advanced method of coloring the
 				mandelbulb using edge detection, each of the x, y, z dimensions is assigned a different RGB color.
+
+				<a class="link" href="https://www.youtube.com/watch?v=0RWaR7zApEo">Live Coding: Bending Light</a></a>
 			</p>
-			<a class="link" href="https://www.youtube.com/watch?v=0RWaR7zApEo">Live Coding: Bending Light</a></a>
+			<br>
 			<br>
 			<img class="img" src="assets/three_color.png" alt="Three Color Mandelbulb" width="500" height="500">
 			<br>
@@ -90,9 +92,9 @@
 			<p>
 				<h2>One Color Mandelbulb</h2>
 				<br>
-				This version uses the basic ray marching starting point provided by Martijn Steinrucken.
-				<br>
-
+				This version uses the basic ray marching starting point provided by Martijn Steinrucken. The diffuse
+				lighting still needs
+				improvement as the mandelbulb is too dark.
 				<a class="link" href="https://www.shadertoy.com/view/WtGXDD">Ray Marching Starting Point</a></a>
 				<br>
 				<br>
@@ -111,15 +113,14 @@
 			<p>
 				<h2>Mandelbulb using Inigo Quilez lighting</h2>
 				<br>
-				This version uses the lighting techniques of Inigo Quilez described in his Happy Jumping youtube
+				This version uses the lighting techniques of Inigo Quilez in his Happy Jumping youtube
 				tutorial. Inigo Quilez is an expert at lighting, and the parameters were optimized for his animation
-				of a blobby monster jumping. It can be difficult to know how to port lighting parameters to a different
-				shader.
-				I think this is the reason that this version is over-exposed. There is also quite a bit
+				of a blobby monster jumping. I had a hard time trying to figure out how to change his lighting
+				lighting parameters--I think this is the reason that this version is over-exposed. There is also quite a
+				bit
 				of aliasing when it is animating. Improving the lighting and animation are avenues for future
 				improvement.
 				<br>
-
 				<a class="link" href="https://www.youtube.com/watch?v=Cfe5UQ-1L9Q">Live Coding and Painting with
 					Maths</a></a>.
 				<br>
@@ -141,12 +142,13 @@
 				<br>
 				This is my first render of the mandelbulb in p5.js. I started out using Jamie Wong's Shadertoy
 				sketch
-				as a guide, which uses phong illumination <a class="link"
-					href="https://www.shadertoy.com/view/llt3R4">Jamie
-					Wong's shadertoy code</a>.
+				as a guide, which uses phong illumination .
 				I think it is pretty cool looking, but it doesn't animate well. I suspect this is due to the
 				raydirection
 				function, and I hope to investigate further to see if I can get this version to animate.
+				<br>
+				<a class="link" href="https://www.shadertoy.com/view/llt3R4">Jamie
+					Wong's shadertoy code</a>
 				<br>
 				<img class="img" src="assets/crystal.png" alt="Crystal Mandelbulb" width="500" height="500">
 				<br>
@@ -164,8 +166,10 @@
 				<h2>Attempt #1: MeshLab</h2>
 				<br>
 				I initially tried to render the mandelbulb using MeshLab. Following Dan Shiffman's lead, I loaded
-				the vertices (all 206,828 of them) into MeshLab and used a guide a found in github to try to mesh the vertices. The first version
-				looked rather like a pin cushion because the normals were facing the wrong direction! I eventually came up with this version. While not
+				the vertices (all 206,828 of them) into MeshLab and used a guide a found in github to try to mesh the
+				vertices. The first version
+				looked rather like a pin cushion because the normals were facing the wrong direction! I eventually came
+				up with this version. While not
 				completely horrible, it is not fully rendered and it kind of looks the mandelbulb is in a cage.
 				<br>
 				<img class="img" src="assets/meshlab.png" alt="Meshlab Mandelbulb" width="500" height="500">
