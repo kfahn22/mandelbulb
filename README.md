@@ -22,19 +22,19 @@
 
 ## 5.  Three color Mandelbulb
 
-![Three Color Mandelbulb] (/assets/three_color.png)
+![Three Color Mandelbulb] (https://github.com/kfahn22/mandelbulb/blob/main/assets/three_color.png)
 - [Three Color Mandelbulb P5.js sketch] https://editor.p5js.org/kfahn/full/XF8pZKeRC
 - [Link to Code] https://editor.p5js.org/kfahn/sketches/XF8pZKeRC
 
 ## 6.  Single color Mandelbulb
 
-![Single Color Mandelbulb] (/assets/single_color.png)
+![Single Color Mandelbulb] (https://github.com/kfahn22/mandelbulb/blob/main/assets/single_color.png)
 - [One Color Mandelbulb P5.js sketch] https://editor.p5js.org/kfahn/full/2w56dWbzL
 - [Link to Code] https://editor.p5js.org/kfahn/sketches/2w56dWbzL
 
 ## 7.  "Crystal" Mandelbulb
 
-!["Crystal" Mandelbulb] (/assets/crystal.png)
+!["Crystal" Mandelbulb] (https://github.com/kfahn22/mandelbulb/blob/main/assets/crystal.png)
 - ["Crystal" Mandelbulb P5.js sketch] https://editor.p5js.org/kfahn/full/o5sX5O0cF
 - [Link to Code] https://editor.p5js.org/kfahn/sketches/o5sX5O0cF
 
