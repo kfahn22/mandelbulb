@@ -1,6 +1,6 @@
 # Mandelbulb
 
-## This code uses renders the mandelbulb in P5.js using a signed distance function in a shader.  The launch point is the Coding Train Mandelbulb challenge by Daniel Shiffman.  The frag files also incorporate code written by Inigo Quilez, Martyn Steinrucken, and/or  Jamie Wong.  Images of the rendered mandelbulbs and more detail can be found here.
+## This code uses renders the mandelbulb in P5.js using a signed distance function in a shader.  The launch point is the Coding Train Mandelbulb challenge by Daniel Shiffman.  The frag files also incorporate code written by Inigo Quilez, Martyn Steinrucken, and/or  Jamie Wong. 
 
 ## 1.  The Spherical function and mandelbulbSDF track as closely as possible to the code written by Daniel Shiffman. 
 
