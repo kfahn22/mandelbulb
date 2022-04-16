@@ -153,16 +153,19 @@ the links and position the close button again, so they don't overlap */
 }
 
 @media screen and (min-width: 600px) {
-    .div #myDIV1 {
+    div #myDIV1 {
         flex-direction: row;
     }
-    .div #myDIV2 {
+    div #myDIV2 {
         flex-direction: row;
     }
+    div
     #ham {
         display: none;
     }
-
+    div.mandelbulb {
+        width: 40vw;
+    }
     .topNav {
         width: 100%;
         text-align: center;
