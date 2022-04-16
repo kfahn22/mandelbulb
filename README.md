@@ -22,7 +22,7 @@
 
 ## 5.  Three color Mandelbulb
 
-![Three Color Mandelbulb] (./assets/three_color.png?raw=true)
+![Three Color Mandelbulb] <img class="img" src="assets/three_color.png" alt="Three Color Mandelbulb" width="500" height="500">
 - [Three Color Mandelbulb P5.js sketch] https://editor.p5js.org/kfahn/full/XF8pZKeRC
 - [Link to Code] https://editor.p5js.org/kfahn/sketches/XF8pZKeRC
 
