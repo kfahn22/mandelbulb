@@ -1,0 +1,61 @@
+!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <title>Mandelbulb rendered in P5.js using a SDF - Home</title>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.8.1/css/all.css">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.16.0/umd/popper.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+    <link rel="stylesheet" type="text/css" href="style.css">
+</head>
+
+<body>
+    <header>
+        <h1>Color Versions</h1>
+    </header>
+    <div class="d-flex flex-row" id="myDIV1">
+        <div class="mandelbulb" style="flex-grow:1" id="mandelbulb1">
+
+            <p>
+                <h2>Three Color Mandelbulb</h2>
+                <br>
+                This rendered version uses the lighting techniques described in The Art of Code: Bending lighting"
+                youtube tutorial by Martijn Steinrucken. Rather than the more advanced method of coloring the
+                mandelbulb using edge detection, each of the x, y, z dimensions is assigned a different RGB color.
+                <br>
+                <a class="link" href="https://www.youtube.com/watch?v=0RWaR7zApEo">Live Coding: Bending Light</a></a>
+            </p>
+            <br>
+            <br>
+            <img class="img" src="assets/three_color.png" alt="Three Color Mandelbulb" width="400" height="400">
+            <br>
+            <a class="link" href="https://editor.p5js.org/kfahn/full/XF8pZKeRC">Three color mandelbulb
+                sketch</a></a>
+            <br>
+            <a class="link" href="https://github.com/kfahn22/mandelbulb/tree/main/Multi_color">Code</a></a>
+        </div>
+        <div class="mandelbulb" style="flex-grow:1" id="mandelbulb2">
+
+            <p>
+                <h2>One Color Mandelbulb</h2>
+                <br>
+                This version uses the basic ray marching starting point provided by Martijn Steinrucken. The diffuse
+                lighting still needs
+                improvement as the mandelbulb is too dark.
+                <br>
+                <a class="link" href="https://www.shadertoy.com/view/WtGXDD">Ray Marching Starting Point</a></a>
+                <br>
+                <br>
+                <img class="img" src="assets/single_color.png" alt="Single Color Mandelbulb" width="500" height="500">
+                <br>
+                <a class="link" href="https://editor.p5js.org/kfahn/full/2w56dWbzL">Single color mandelbulb
+                    sketch</a></a>
+                <br>
+                <a class="link" href="https://github.com/kfahn22/mandelbulb/tree/main/One%20Color">Code</a></a>
+            </p>
+        </div>
+    </div>
