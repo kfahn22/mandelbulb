@@ -22,7 +22,9 @@
 
 ## 5.  Three color Mandelbulb
 
-<img class="img" src="assets/three_color.png" alt="Three Color Mandelbulb" width="500" height="500">
+<img class="img" src="assets/three_color.png" alt="Three Color Mandelbulb" style=" display: block;
+    margin-left: auto;
+    margin-right: auto;" width="500" height="500">
 - [Three Color Mandelbulb P5.js sketch] https://editor.p5js.org/kfahn/full/XF8pZKeRC
 - [Link to Code] https://editor.p5js.org/kfahn/sketches/XF8pZKeRC
 
@@ -36,7 +38,9 @@
 
 ## 7.  "Crystal" Mandelbulb
 
-<img class="img" src="assets/crystal.png" alt="Crystal Mandelbulb" width="500" height="500">
+<img class="img" src="assets/crystal.png" alt="Crystal Mandelbulb" style=" display: block;
+    margin-left: auto;
+    margin-right: auto;" width="500" height="500">
 - ["Crystal" Mandelbulb P5.js sketch] https://editor.p5js.org/kfahn/full/o5sX5O0cF
 - [Link to Code] https://editor.p5js.org/kfahn/sketches/o5sX5O0cF
 
