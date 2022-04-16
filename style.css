@@ -124,18 +124,23 @@ nav .topNav {
     /*height: 88vh;*/
     justify-content: space-between;
 }
-div #myDIV1 {
+.flex-container #myDIV1 {
+    display: flex;
+    width: 80vw;
+}
+
+/*div #myDIV1 {
     display: flex;
     flex-direction: column;
 }
 div #myDIV2 {
     display: flex;
     flex-direction: column;
-}
+}*/
 
 /* When the height of the screen is less than 450 pixels, change the font-size of
 the links and position the close button again, so they don't overlap */
-@media screen and (max-height: 600px) {
+/*@media screen and (max-height: 600px) {
     .overlay a {
         font-size: 20px
     }
@@ -150,16 +155,18 @@ the links and position the close button again, so they don't overlap */
     }
 
    
-}
+}*/
 
 @media screen and (min-width: 600px) {
-    div #myDIV1 {
+    .flex-container #myDIV1 {
+        display: flex;
         flex-direction: row;
     }
-    div #myDIV2 {
+    .flex-container #myDIV2 {
+        display: flex;
         flex-direction: row;
     }
-    div
+    
     #ham {
         display: none;
     }
