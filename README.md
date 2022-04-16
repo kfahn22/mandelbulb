@@ -13,28 +13,27 @@
 
 ## 3.  Martijn Steinrucken has some wonderful wonderful shader tutorials on youtube.  I have used his ray marching starting point in the one and three color versions.  If you want a really good explanation of ray marching, I highly recommend you watch his video on the topic!
 
-- YouTube: youtube.com/TheArtOfCodeIsCool
-- https://www.youtube.com/watch?v=PGtv-dBi2wE
+- [YouTube: youtube.com/TheArtOfCodeIsCool] https://www.youtube.com/watch?v=PGtv-dBi2wE
 - [Ray marching starting point] https://www.shadertoy.com/view/WtGXDD
 
 ## 4.  The lighting and ray marching code in the crystal version of the mandelbulb comes from Jamie Wong.
 - [Ray Marching and Signed Distance Functions] http://jamie-wong.com/2016/07/15/ray-marching-signed-distance-functions/
 - [Link to shadertoy code] https://www.shadertoy.com/view/lt33z7
 
-## 5.  Link to the three color verson of P5.sj sketch
+## 5.  Three color Mandelbulb
 
-- https://editor.p5js.org/kfahn/full/XF8pZKeRC
-- https://editor.p5js.org/kfahn/sketches/XF8pZKeRC
+- [Three Color Mandelbulb P5.js sketch] https://editor.p5js.org/kfahn/full/XF8pZKeRC
+- [Link to Code] https://editor.p5js.org/kfahn/sketches/XF8pZKeRC
 
-## 6.  Link to the one color version of P5.js sketch
+## 6.  One color Mandelbulb
 
-- https://editor.p5js.org/kfahn/full/2w56dWbzL
-- https://editor.p5js.org/kfahn/sketches/2w56dWbzL
+- [One Color Mandelbulb P5.js sketch] https://editor.p5js.org/kfahn/full/2w56dWbzL
+- [Link to Code] https://editor.p5js.org/kfahn/sketches/2w56dWbzL
 
-## 7.  Link to a "crystal" version of the P5.js sketch
+## 7.  "Crystal" Mandelbulb
 
-- https://editor.p5js.org/kfahn/full/o5sX5O0cF
-- https://editor.p5js.org/kfahn/sketches/o5sX5O0cF
+- ["Crystal" Mandelbulb P5.js sketch] https://editor.p5js.org/kfahn/full/o5sX5O0cF
+- [Link to Code] https://editor.p5js.org/kfahn/sketches/o5sX5O0cF
 
 ## 8.   Future Improvements
 

@@ -70,14 +70,7 @@
 				the mandelbulbs are animated. Nonetheless, I am still excited with the results, especially the thee
 				color version. </p>
 			<p>
-				One thing to note is that uvs in shaders have floating point values from 0.0, 1.0 instead of 0 to 255.
-				Ultimately, each pixel is colored according to its uv value that is passed
-				to gl_FragColor at the end of the frag file. The values are usually set initially to 0.0 or some
-				background color and then changed by adding or multiplying using matrix operations.
-				It is possible to inadvertantly set some (or all) of the uvs to 1.0 which will result in an over-exposed
-				object or even a white screen. Another thing to note is that while the three color version renders
-				fairly quickly, but the other versions are slower and I think they are consuming a lot of computing
-				power.
+				
 			</p>
 		</div>
 	</div>
@@ -129,7 +122,7 @@
 				<h2>Mandelbulb using Inigo Quilez lighting</h2>
 				<br>
 				This version uses the lighting techniques of Inigo Quilez in his Happy Jumping youtube
-				tutorial (truely a wonderful tutorial!!!). Inigo Quilez is an expert at lighting, and the parameters were optimized for his animation
+				tutorial (a truely wonderful tutorial!). Inigo Quilez is an expert at lighting, and the parameters were optimized for his animation
 				of a blobby monster jumping. I had a hard time trying to figure out how to change his 
 				lighting parameters--I think this is the reason that this version is over-exposed. There is also quite a
 				bit of aliasing when it is animated. Improving the lighting and animation are avenues for future
