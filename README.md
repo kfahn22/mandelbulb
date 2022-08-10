@@ -21,7 +21,7 @@
 
 ## 5.  Pastel Mandelbulb
 
-<img class="img" src="assets/pastel.png" alt="Pastel Mandelbulb" style=" display: block;
+<img class="img" src="assets/pastel.jpg" alt="Pastel Mandelbulb" style=" display: block;
     margin-left: auto;
     margin-right: auto;" width="500" height="500">
 - [Pasel Mandelbulb P5.js sketch] https://editor.p5js.org/kfahn/full/U6_U2XHJj
