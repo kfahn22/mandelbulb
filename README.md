@@ -19,7 +19,15 @@
 - [Ray Marching and Signed Distance Functions] http://jamie-wong.com/2016/07/15/ray-marching-signed-distance-functions/
 - [Link to shadertoy code] https://www.shadertoy.com/view/lt33z7
 
-## 5.  Three color Mandelbulb
+## 5.  Pastel Mandelbulb
+
+<img class="img" src="assets/pastel.png" alt="Pastel Mandelbulb" style=" display: block;
+    margin-left: auto;
+    margin-right: auto;" width="500" height="500">
+- [Pasel Mandelbulb P5.js sketch] https://editor.p5js.org/kfahn/full/U6_U2XHJj
+- [Link to Code] https://editor.p5js.org/kfahn/sketches/U6_U2XHJj
+
+## 6.  Three color Mandelbulb
 
 <img class="img" src="assets/three_color.png" alt="Three Color Mandelbulb" style=" display: block;
     margin-left: auto;
@@ -27,7 +35,7 @@
 - [Three Color Mandelbulb P5.js sketch] https://editor.p5js.org/kfahn/full/XF8pZKeRC
 - [Link to Code] https://editor.p5js.org/kfahn/sketches/XF8pZKeRC
 
-## 6.  Single color Mandelbulb
+## 7.  Single color Mandelbulb
 
 <img class="img" src="assets/single_color.png" alt="Single Color Mandelbulb" style=" display: block;
     margin-left: auto;
@@ -35,7 +43,7 @@
 - [One Color Mandelbulb P5.js sketch] https://editor.p5js.org/kfahn/full/2w56dWbzL
 - [Link to Code] https://editor.p5js.org/kfahn/sketches/2w56dWbzL
 
-## 7.  "Crystal" Mandelbulb
+## 8.  "Crystal" Mandelbulb
 
 <img class="img" src="assets/crystal.png" alt="Crystal Mandelbulb" style=" display: block;
     margin-left: auto;
@@ -43,7 +51,7 @@
 - ["Crystal" Mandelbulb P5.js sketch] https://editor.p5js.org/kfahn/full/o5sX5O0cF
 - [Link to Code] https://editor.p5js.org/kfahn/sketches/o5sX5O0cF
 
-## 8.   Future Improvements
+## 9.   Future Improvements
 
 - Try to address aliasing.
 - Try to implement true edge detection
