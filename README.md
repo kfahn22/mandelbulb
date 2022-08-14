@@ -19,13 +19,41 @@
 - [Ray Marching and Signed Distance Functions] http://jamie-wong.com/2016/07/15/ray-marching-signed-distance-functions/
 - [Link to shadertoy code] https://www.shadertoy.com/view/lt33z7
 
-## 5.  Pastel Mandelbulb
+## 5.  Mandelbulb with Multiple color options
+
+This p5.js sketch renders the mandelbulb with several different color options.  Here are a few of the best color combinations 
+I have found.
 
 <img class="img" src="assets/pastel.jpg" alt="Pastel Mandelbulb" style=" display: block;
     margin-left: auto;
     margin-right: auto;" width="500" height="500">
-- [Pasel Mandelbulb P5.js sketch] https://editor.p5js.org/kfahn/full/U6_U2XHJj
-- [Link to Code] https://editor.p5js.org/kfahn/sketches/U6_U2XHJj
+<img class="img" src="assets/pink_purple_mandelbulb.jpg" alt="Pink and Purle Mandelbulb" style=" display: block;
+    margin-left: auto;
+    margin-right: auto;" width="500" height="500">
+    <img class="img" src="assets/purple_aqua_mandelbulb.jpg" alt="Purple Aqua Mandelbulb" style=" display: block;
+    margin-left: auto;
+    margin-right: auto;" width="500" height="500">
+    <img class="img" src="assets/purple_mandelbulb.jpg" alt="Purple Mandelbulb" style=" display: block;
+    margin-left: auto;
+    margin-right: auto;" width="500" height="500">
+    <img class="img" src="assets/green_purple_mandelbulb.jpg" alt="Green and Purple Mandelbulb" style=" display: block;
+    margin-left: auto;
+    margin-right: auto;" width="500" height="500">
+    <img class="img" src="assets/bright_color_mandelbulb.jpg" alt="Bright colors Mandelbulb" style=" display: block;
+    margin-left: auto;
+    margin-right: auto;" width="500" height="500">
+      <img class="img" src="assets/blue_aqua_mandelbulb.jpg" alt="Blue and aqua Mandelbulb" style=" display: block;
+    margin-left: auto;
+    margin-right: auto;" width="500" height="500">
+
+  <img class="img" src="assets/raspberry_cream_mandelbulb.jpg" alt="Raspberry Mandelbulb" style=" display: block;
+    margin-left: auto;
+    margin-right: auto;" width="500" height="500">
+
+
+- [Mandelbulb P5.js sketch] https://editor.p5js.org/kfahn/full/xtZ6edhVi
+- [Link to Code] https://editor.p5js.org/kfahn/sketches/xtZ6edhVi
+
 
 ## 6.  Three color Mandelbulb
 
