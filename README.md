@@ -27,10 +27,10 @@ I have found.
 <img class="img" src="assets/pastel.jpg" alt="Pastel Mandelbulb" style=" display: block;
     margin-left: auto;
     margin-right: auto;" width="500" height="500">
-<img class="img" src="assets/pink_purple_mandelbulb.jpg" alt="Pink and Purle Mandelbulb" style=" display: block;
+<img class="img" src="assets/pink_purple_mandelbulb.jpg" alt="Pink and Purple Mandelbulb" style=" display: block;
     margin-left: auto;
     margin-right: auto;" width="500" height="500">
-<img class="img" src="assets/aqua_mandelbulb.jpg" alt="Blue and aqua Mandelbulb" style=" display: block;
+<img class="img" src="assets/aqua_mandelbulb.jpg" alt="Aqua Mandelbulb" style=" display: block;
     margin-left: auto;
     margin-right: auto;" width="500" height="500">
 <img class="img" src="assets/green_purple_mandelbulb.jpg" alt="Green and Purple Mandelbulb" style=" display: block;
@@ -45,8 +45,6 @@ I have found.
 <img class="img" src="assets/bright_color_mandelbulb.jpg" alt="Bright colors Mandelbulb" style=" display: block;
     margin-left: auto;
     margin-right: auto;" width="500" height="500">
-
-
 <img class="img" src="assets/raspberry_cream_mandelbulb.jpg" alt="Raspberry Mandelbulb" style=" display: block;
     margin-left: auto;
     margin-right: auto;" width="500" height="500">
