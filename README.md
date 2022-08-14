@@ -21,7 +21,7 @@
 
 ## 5.  Mandelbulb with Multiple color options
 
-This p5.js sketch renders the mandelbulb with several different color options.  Here are a few of the best color combinations 
+This p5.js sketch renders the mandelbulb with several different color options.  The color is a function of the iterations in the mandelbulbSDF and the parameters in the vec3 that holds the colors.  Here are a few of the best color combinations 
 I have found.
 
 <img class="img" src="assets/pastel.jpg" alt="Pastel Mandelbulb" style=" display: block;
@@ -30,23 +30,24 @@ I have found.
 <img class="img" src="assets/pink_purple_mandelbulb.jpg" alt="Pink and Purle Mandelbulb" style=" display: block;
     margin-left: auto;
     margin-right: auto;" width="500" height="500">
-    <img class="img" src="assets/purple_aqua_mandelbulb.jpg" alt="Purple Aqua Mandelbulb" style=" display: block;
+<img class="img" src="assets/aqua_mandelbulb.jpg" alt="Blue and aqua Mandelbulb" style=" display: block;
     margin-left: auto;
     margin-right: auto;" width="500" height="500">
-    <img class="img" src="assets/purple_mandelbulb.jpg" alt="Purple Mandelbulb" style=" display: block;
+<img class="img" src="assets/green_purple_mandelbulb.jpg" alt="Green and Purple Mandelbulb" style=" display: block;
     margin-left: auto;
     margin-right: auto;" width="500" height="500">
-    <img class="img" src="assets/green_purple_mandelbulb.jpg" alt="Green and Purple Mandelbulb" style=" display: block;
+<img class="img" src="assets/purple_aqua_mandelbulb.jpg" alt="Purple Aqua Mandelbulb" style=" display: block;
     margin-left: auto;
     margin-right: auto;" width="500" height="500">
-    <img class="img" src="assets/bright_color_mandelbulb.jpg" alt="Bright colors Mandelbulb" style=" display: block;
+<img class="img" src="assets/purple_mandelbulb.jpg" alt="Purple Mandelbulb" style=" display: block;
     margin-left: auto;
     margin-right: auto;" width="500" height="500">
-      <img class="img" src="assets/blue_aqua_mandelbulb.jpg" alt="Blue and aqua Mandelbulb" style=" display: block;
+<img class="img" src="assets/bright_color_mandelbulb.jpg" alt="Bright colors Mandelbulb" style=" display: block;
     margin-left: auto;
     margin-right: auto;" width="500" height="500">
 
-  <img class="img" src="assets/raspberry_cream_mandelbulb.jpg" alt="Raspberry Mandelbulb" style=" display: block;
+
+<img class="img" src="assets/raspberry_cream_mandelbulb.jpg" alt="Raspberry Mandelbulb" style=" display: block;
     margin-left: auto;
     margin-right: auto;" width="500" height="500">
 
